@@ -5,6 +5,8 @@ import io.restassured.http.ContentType;
 import io.restassured.response.Response;
 import lombok.extern.slf4j.Slf4j;
 
+import java.util.Map;
+
 import static net.serenitybdd.rest.SerenityRest.given;
 import static starter.utils.TestGlobalVariables.ContextEnum.*;
 import static starter.utils.TestGlobalVariables.setContext;
@@ -73,8 +75,35 @@ public class BranchApiHelper {
                 .post()
                 .then().log().all().extract().response();
         setContext(HTTP_RESPONSE.name(), response);
+        setContext(ACCESS_TOKEN.name(), response.then().extract().body().jsonPath().get("token"));
         return response;
     }
+
+    public static Response getRequest(String path, String accessToken) {
+        Response response = given()
+                .contentType(ContentType.JSON)
+                .header("Authorization", "Bearer " + accessToken)
+                .baseUri(baseApiUrl)
+                .basePath(path)
+                .get()
+                .then().log().all().extract().response();
+        setContext(HTTP_RESPONSE.name(), response);
+        return response;
+    }
+
+    public static Response getRequestWithQueryParams(Map<String, Object> params, String path, String accessToken) {
+        Response response = given()
+                .contentType(ContentType.JSON)
+                .header("Authorization", "Bearer " + accessToken)
+                .baseUri(baseApiUrl)
+                .basePath(path)
+                .queryParams(params)
+                .get()
+                .then().log().all().extract().response();
+        setContext(HTTP_RESPONSE.name(), response);
+        return response;
+    }
+
 
 }
 

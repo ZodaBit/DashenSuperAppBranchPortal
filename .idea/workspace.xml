@@ -5,28 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="97885451-64a2-4f0c-b015-9120432f1db7" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/starter/CucumberTestSuite.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/starter/assertions/AssertionsAPI.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/starter/step_definitions/UserAuthentications.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/starter/utils/BranchApiHelper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/starter/utils/Constants.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/starter/utils/EnvConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/starter/utils/HelperUtils.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/starter/utils/JsonBodyHelperUtils.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/starter/utils/PropertiesReader.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/starter/utils/TestGlobalVariables.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/resources/config.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/resources/features/user_authentication.feature" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/resources/parameter.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/resources/serenity.conf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/starter/step_definitions/customers/CustomersStepDefinitions.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/features/customers/customers.feature" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/starter/assertions/AssertionsAPI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/starter/assertions/AssertionsAPI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/starter/step_definitions/UserAuthentications.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/starter/step_definitions/auth/UserAuthentications.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/starter/utils/BranchApiHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/starter/utils/BranchApiHelper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/features/user_authentication.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/features/auth/user_authentication.feature" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/parameter.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/parameter.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,28 +38,33 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Cucumber Java.Feature: UserCheck.executor&quot;: &quot;Run&quot;,
-    &quot;Cucumber Java.Feature: user_authentication.executor&quot;: &quot;Run&quot;,
-    &quot;Cucumber Java.Scenario: 3. Verify Authentication Fails with Incorrect OTP Token.executor&quot;: &quot;Run&quot;,
-    &quot;Cucumber Java.Scenario: 3. Verify Authentication Fails with Incorrect OTP and Token.executor&quot;: &quot;Run&quot;,
-    &quot;Cucumber Java.Scenario: Verify Authentication Fails with Incorrect OTP.executor&quot;: &quot;Run&quot;,
-    &quot;Cucumber Java.Scenario: Verify Authentication Fails with Incorrect passcode.executor&quot;: &quot;Run&quot;,
-    &quot;Cucumber Java.Scenario: Verify authentication failure to login with \&quot;ep_user_auth\&quot; endpoint Token.executor&quot;: &quot;Debug&quot;,
-    &quot;Cucumber Java.Scenario: Verify user status after password setup and OTP authentication.executor&quot;: &quot;Run&quot;,
-    &quot;Cucumber Java.Scenario: Verify user status after password setup and OTP fa.executor&quot;: &quot;Run&quot;,
-    &quot;Cucumber Java.Scenario: validate if the user is register or not.executor&quot;: &quot;Debug&quot;,
-    &quot;JUnit.CucumberTestSuite.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/EagleLion/DBSuperAppDashBoard/src/test/java/starter/stepDefinitions&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Cucumber Java.Feature: UserCheck.executor": "Run",
+    "Cucumber Java.Feature: customers.executor": "Run",
+    "Cucumber Java.Feature: user_authentication.executor": "Run",
+    "Cucumber Java.Scenario: 3. Verify Authentication Fails with Incorrect OTP Token.executor": "Run",
+    "Cucumber Java.Scenario: 3. Verify Authentication Fails with Incorrect OTP and Token.executor": "Run",
+    "Cucumber Java.Scenario: Paginate through customer and retrieve the correct number of customer per page.executor": "Debug",
+    "Cucumber Java.Scenario: Verify Authentication Fails with Incorrect OTP.executor": "Run",
+    "Cucumber Java.Scenario: Verify Authentication Fails with Incorrect passcode.executor": "Run",
+    "Cucumber Java.Scenario: Verify authentication failure to login with \"ep_user_auth\" endpoint Token.executor": "Debug",
+    "Cucumber Java.Scenario: Verify user status after password setup and OTP authentication.executor": "Run",
+    "Cucumber Java.Scenario: Verify user status after password setup and OTP fa.executor": "Run",
+    "Cucumber Java.Scenario: validate if the user is register or not.executor": "Debug",
+    "JUnit.CucumberTestSuite.executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "Customers",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "D:/EagleLion/DBSuperAppDashBoard/src/test/java/starter/stepDefinitions"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\EagleLion\DBSuperAppDashBoard\src\test\resources\features\Auth" />
+    </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="starter" />
       <recent name="org.example.util" />
@@ -81,7 +72,26 @@
       <recent name="org.example" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.CucumberTestSuite">
+  <component name="RunManager" selected="Cucumber Java.Feature: customers">
+    <configuration name="Feature: customers" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
+      <option name="CUCUMBER_CORE_VERSION" value="5" />
+      <option name="FILE_PATH" value="$PROJECT_DIR$/src/test/resources/features/customers/customers.feature" />
+      <option name="GLUE" value="net.serenitybdd.cucumber.actors starter.step_definitions.auth starter.step_definitions.customers" />
+      <option name="MAIN_CLASS_NAME" value="io.cucumber.core.cli.Main" />
+      <module name="DBSuperAppDashBoard" />
+      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm5SMFormatter" />
+      <option name="SUGGESTED_NAME" value="Feature: customers" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_WORKING_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="io.cucumber.core.cli.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Scenario: 3. Verify Authentication Fails with Incorrect OTP Token" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
       <option name="CUCUMBER_CORE_VERSION" value="5" />
       <option name="FILE_PATH" value="$PROJECT_DIR$/src/test/resources/features/user_authentication.feature" />
@@ -122,35 +132,15 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Scenario: Verify Authentication Fails with Incorrect passcode" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
+    <configuration name="Scenario: Paginate through customer and retrieve the correct number of customer per page" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
       <option name="CUCUMBER_CORE_VERSION" value="5" />
-      <option name="FILE_PATH" value="$PROJECT_DIR$/src/test/resources/features/user_authentication.feature" />
-      <option name="GLUE" value="starter.step_definitions net.serenitybdd.cucumber.actors" />
+      <option name="FILE_PATH" value="$PROJECT_DIR$/src/test/resources/features/customers/customers.feature" />
+      <option name="GLUE" value="net.serenitybdd.cucumber.actors starter.step_definitions.auth starter.step_definitions.customers" />
       <option name="MAIN_CLASS_NAME" value="io.cucumber.core.cli.Main" />
       <module name="DBSuperAppDashBoard" />
-      <option name="NAME_FILTER" value="^Verify Authentication Fails with Incorrect passcode$" />
-      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm5SMFormatter --name &quot;^Verify Authentication Fails with Incorrect passcode$&quot;" />
-      <option name="SUGGESTED_NAME" value="Scenario: Verify Authentication Fails with Incorrect passcode" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_WORKING_DIR$" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="io.cucumber.core.cli.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Scenario: Verify authentication failure to login with &quot;ep_user_auth&quot; endpoint Token" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
-      <option name="CUCUMBER_CORE_VERSION" value="5" />
-      <option name="FILE_PATH" value="$PROJECT_DIR$/src/test/resources/features/user_authentication.feature" />
-      <option name="GLUE" value="starter.step_definitions net.serenitybdd.cucumber.actors" />
-      <option name="MAIN_CLASS_NAME" value="io.cucumber.core.cli.Main" />
-      <module name="DBSuperAppDashBoard" />
-      <option name="NAME_FILTER" value="^Verify authentication failure to login with \&quot;ep_user_auth\&quot; endpoint Token$" />
-      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm5SMFormatter --name &quot;^Verify authentication failure to login with \&quot;ep_user_auth\&quot; endpoint Token$&quot;" />
-      <option name="SUGGESTED_NAME" value="Scenario: Verify authentication failure to login with &quot;ep_user_auth&quot; endpoint Token" />
+      <option name="NAME_FILTER" value="^Paginate through customer and retrieve the correct number of customer per page$" />
+      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm5SMFormatter --name &quot;^Paginate through customer and retrieve the correct number of customer per page$&quot;" />
+      <option name="SUGGESTED_NAME" value="Scenario: Paginate through customer and retrieve the correct number of customer per page" />
       <option name="WORKING_DIRECTORY" value="$MODULE_WORKING_DIR$" />
       <extension name="coverage">
         <pattern>
@@ -179,11 +169,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Cucumber Java.Feature: customers" />
+        <item itemvalue="Cucumber Java.Scenario: Paginate through customer and retrieve the correct number of customer per page" />
         <item itemvalue="JUnit.CucumberTestSuite" />
         <item itemvalue="Cucumber Java.Scenario: 3. Verify Authentication Fails with Incorrect OTP Token" />
         <item itemvalue="Cucumber Java.Scenario: 3. Verify Authentication Fails with Incorrect OTP and Token" />
-        <item itemvalue="Cucumber Java.Scenario: Verify authentication failure to login with &quot;ep_user_auth&quot; endpoint Token" />
-        <item itemvalue="Cucumber Java.Scenario: Verify Authentication Fails with Incorrect passcode" />
       </list>
     </recent_temporary>
   </component>

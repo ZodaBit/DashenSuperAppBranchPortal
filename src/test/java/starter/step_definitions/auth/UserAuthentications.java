@@ -1,4 +1,4 @@
-package starter.step_definitions;
+package starter.step_definitions.auth;
 
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
@@ -100,4 +100,5 @@ public class UserAuthentications {
         String token = "";
         postRequestLogin(otpJsonBody, getParameterProperties(endPoint), EnvConfig.getOtpForHeader(), token);
     }
+
 }
