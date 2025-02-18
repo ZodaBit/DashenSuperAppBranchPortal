@@ -4,9 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="97885451-64a2-4f0c-b015-9120432f1db7" name="Changes" comment="">
+    <list default="true" id="97885451-64a2-4f0c-b015-9120432f1db7" name="Changes" comment="workspace change">
+      <change afterPath="$PROJECT_DIR$/.github/workflows/api_test_workflow.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/features/customers/customers.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/features/customers/customers.feature" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -180,6 +180,19 @@
       <option name="presentableId" value="Default" />
       <updated>1739339508952</updated>
     </task>
+    <task id="LOCAL-00001" summary="workspace change">
+      <option name="closed" value="true" />
+      <created>1739908451838</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1739908451838</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="workspace change" />
+    <option name="LAST_COMMIT_MESSAGE" value="workspace change" />
   </component>
 </project>
