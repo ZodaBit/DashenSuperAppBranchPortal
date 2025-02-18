@@ -1,0 +1,42 @@
+name: CI/CD Pipeline
+
+on:
+  workflow_dispatch:  # Allows manual trigger from GitHub UI
+  # push:
+  #   branches: [ main ]
+  # pull_request:
+  #   branches: [ main ]
+
+jobs:
+  build-and-test:
+    name: 🏗️ Build & Test
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 📥 Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: ☕ Set Up JDK 17
+        uses: actions/setup-java@v3
+        with:
+          distribution: 'temurin'
+          java-version: '17'
+          cache: 'maven'
+
+      - name: 📦 Build Project
+        run: mvn clean install -DskipTests
+
+      - name: ✅ Run Unit Tests
+        run: mvn test
+
+      - name: 🔎 Run Integration Tests
+        run: mvn verify
+
+      - name: 📊 Generate Serenity Reports
+        run: mvn serenity:aggregate
+
+      - name: 📤 Upload Serenity Reports
+        uses: actions/upload-artifact@v3
+        with:
+          name: serenity-reports
+          path: target/site/serenity/
