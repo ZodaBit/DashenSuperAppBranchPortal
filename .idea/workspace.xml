@@ -5,14 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="97885451-64a2-4f0c-b015-9120432f1db7" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/test/java/starter/step_definitions/customers/CustomersStepDefinitions.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/resources/features/customers/customers.feature" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/starter/assertions/AssertionsAPI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/starter/assertions/AssertionsAPI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/starter/step_definitions/UserAuthentications.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/starter/step_definitions/auth/UserAuthentications.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/starter/utils/BranchApiHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/starter/utils/BranchApiHelper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/features/user_authentication.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/features/auth/user_authentication.feature" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/parameter.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/parameter.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/features/customers/customers.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/features/customers/customers.feature" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
