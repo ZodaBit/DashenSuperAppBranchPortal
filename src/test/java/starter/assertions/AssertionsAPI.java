@@ -92,6 +92,12 @@ public class AssertionsAPI {
         response.then().body(jsonPath, hasSize(expectedSize));
     }
 
+    public static void checkResponseSize(String jsonPath, int expectedSize) {
+        Response response = getContext(HTTP_RESPONSE.name());
+        int result = response.then().extract().body().jsonPath().getList(jsonPath).size();
+        Assert.assertEquals(result, expectedSize);
+    }
+
     public static void checkDescendingSorting() {
         Response response = getContext(HTTP_RESPONSE.name());
         List<Integer> ids = response.then().extract().body().jsonPath().get("id");
