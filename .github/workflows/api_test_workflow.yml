@@ -2,10 +2,6 @@ name: CI/CD Pipeline
 
 on:
   workflow_dispatch:  # Allows manual trigger from GitHub UI
-  # push:
-  #   branches: [ main ]
-  # pull_request:
-  #   branches: [ main ]
 
 jobs:
   build-and-test:
@@ -35,8 +31,38 @@ jobs:
       - name: 📊 Generate Serenity Reports
         run: mvn serenity:aggregate
 
-      - name: 📤 Upload Serenity Reports
+      - name: 🗜️ Compress Serenity Reports
+        run: |
+          mkdir -p artifacts
+          zip -r artifacts/serenity-reports.zip target/site/serenity/
+
+      - name: 📤 Upload Serenity Reports as an Artifact
         uses: actions/upload-artifact@v4
         with:
           name: serenity-reports
-          path: target/site/serenity/
+          path: artifacts/serenity-reports.zip
+
+  release:
+    name: 🚀 Create GitHub Release
+    needs: build-and-test
+    runs-on: ubuntu-latest
+    steps:
+      - name: 📥 Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: 📥 Download Serenity Reports
+        uses: actions/download-artifact@v4
+        with:
+          name: serenity-reports
+          path: artifacts/
+
+      - name: 🚀 Create GitHub Release
+        uses: ncipollo/release-action@v1
+        with:
+          tag: v1.0.${{ github.run_number }}
+          name: "Serenity Report Release"
+          body: "Automated release of Serenity reports."
+          draft: false
+          prerelease: false
+          artifacts: "artifacts/serenity-reports.zip"
+          token: ${{ secrets.GITHUB_TOKEN }}
