@@ -6,7 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="97885451-64a2-4f0c-b015-9120432f1db7" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/features/customers/customers.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/features/customers/customers.feature" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,7 +49,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "Customers",
+    "git-widget-placeholder": "CustumerSearchAndFilter",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "D:/EagleLion/DBSuperAppDashBoard/src/test/java/starter/stepDefinitions"
   }
