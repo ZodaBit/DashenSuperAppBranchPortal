@@ -68,17 +68,3 @@ Feature: Customer Search API Validation
       | DENIED       | true         | emebet workugebrekidan | +251936633529 |
       | INITIATED    | false        | DELIL GEBRE WAJO       | +251912892136 |
 
-
-
-
-#
-#  "KYCStatus": "PENDING",
-#  "LDAPStatus": "PENDING"
-#
-#  "KYCStatus": "APPROVED",
-#  "LDAPStatus": "AUTHORIZED"
-#
-#  "KYCStatus": "PENDING",
-#  "LDAPStatus": "DENIED",
-#
-#  "LDAPStatus": "INITIATED",
