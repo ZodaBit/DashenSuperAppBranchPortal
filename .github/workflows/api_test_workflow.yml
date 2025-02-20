@@ -67,7 +67,7 @@ jobs:
         uses: ncipollo/release-action@v1
         with:
           tag: v1.0.${{ github.run_number }}
-          name: "Serenity Report Release"
+          name: "Serenity Repyyyort Release"
           body: "Automated release of Serenity reports."
           draft: false
           prerelease: false
