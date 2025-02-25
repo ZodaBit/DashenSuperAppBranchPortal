@@ -4,10 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="97885451-64a2-4f0c-b015-9120432f1db7" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/test/resources/features/merchant/merchant.feature" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.github/workflows/api_test_workflow.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/api_test_workflow.yml" afterDir="false" />
+    <list default="true" id="97885451-64a2-4f0c-b015-9120432f1db7" name="Changes" comment="add git work flow">
+      <change afterPath="$PROJECT_DIR$/src/test/java/starter/step_definitions/transactions/TransactionsStepDefinitions.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/features/merchant/merchant_search_filter.feature" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/features/transactions/transaction.feature" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/features/transactions/transaction_search_filter.feature" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/starter/assertions/AssertionsAPI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/starter/assertions/AssertionsAPI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/starter/step_definitions/auth/UserAuthentications.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/starter/step_definitions/auth/UserAuthentications.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/features/customers/customers.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/features/customers/customers.feature" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/features/merchant/merchant.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/features/merchant/merchant.feature" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/parameter.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/parameter.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,29 +45,49 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Cucumber Java.Feature: UserCheck.executor": "Run",
-    "Cucumber Java.Feature: customers.executor": "Run",
-    "Cucumber Java.Feature: user_authentication.executor": "Run",
-    "Cucumber Java.Scenario: 3. Verify Authentication Fails with Incorrect OTP Token.executor": "Run",
-    "Cucumber Java.Scenario: 3. Verify Authentication Fails with Incorrect OTP and Token.executor": "Run",
-    "Cucumber Java.Scenario: Paginate through customer and retrieve the correct number of customer per page.executor": "Debug",
-    "Cucumber Java.Scenario: Verify Authentication Fails with Incorrect OTP.executor": "Run",
-    "Cucumber Java.Scenario: Verify Authentication Fails with Incorrect passcode.executor": "Run",
-    "Cucumber Java.Scenario: Verify authentication failure to login with \"ep_user_auth\" endpoint Token.executor": "Debug",
-    "Cucumber Java.Scenario: Verify user status after password setup and OTP authentication.executor": "Run",
-    "Cucumber Java.Scenario: Verify user status after password setup and OTP fa.executor": "Run",
-    "Cucumber Java.Scenario: validate if the user is register or not.executor": "Debug",
-    "JUnit.CucumberTestSuite.executor": "Run",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "main",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "D:/EagleLion/DBSuperAppDashBoard/src/test/resources/features/customers"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Cucumber Java.Feature: UserCheck.executor&quot;: &quot;Run&quot;,
+    &quot;Cucumber Java.Feature: customers.executor&quot;: &quot;Run&quot;,
+    &quot;Cucumber Java.Feature: transaction.executor&quot;: &quot;Run&quot;,
+    &quot;Cucumber Java.Feature: user_authentication.executor&quot;: &quot;Run&quot;,
+    &quot;Cucumber Java.Scenario: 1. Paginate through customer and retrieve the correct number of customer without any parameters.executor&quot;: &quot;Run&quot;,
+    &quot;Cucumber Java.Scenario: 1. Paginate through transactions and retrieve the correct number of transactions without any parameters.executor&quot;: &quot;Run&quot;,
+    &quot;Cucumber Java.Scenario: 1. Search for merchant account number.executor&quot;: &quot;Run&quot;,
+    &quot;Cucumber Java.Scenario: 1. Search for transactions account number.executor&quot;: &quot;Run&quot;,
+    &quot;Cucumber Java.Scenario: 1. Search for transactions date.executor&quot;: &quot;Run&quot;,
+    &quot;Cucumber Java.Scenario: 2. Paginate through customer and retrieve the correct number of customer per page.executor&quot;: &quot;Run&quot;,
+    &quot;Cucumber Java.Scenario: 2. Search for merchant using name.executor&quot;: &quot;Run&quot;,
+    &quot;Cucumber Java.Scenario: 2. Search for transactions using name.executor&quot;: &quot;Run&quot;,
+    &quot;Cucumber Java.Scenario: 3. Search for merchant using phone number.executor&quot;: &quot;Run&quot;,
+    &quot;Cucumber Java.Scenario: 3. Search for transactions using transaction Id.executor&quot;: &quot;Run&quot;,
+    &quot;Cucumber Java.Scenario: 3. Verify Authentication Fails with Incorrect OTP Token.executor&quot;: &quot;Run&quot;,
+    &quot;Cucumber Java.Scenario: 3. Verify Authentication Fails with Incorrect OTP and Token.executor&quot;: &quot;Run&quot;,
+    &quot;Cucumber Java.Scenario: 4.  Filter customers using branch status.executor&quot;: &quot;Run&quot;,
+    &quot;Cucumber Java.Scenario: 4.  Filter merchant by Authorized status.executor&quot;: &quot;Run&quot;,
+    &quot;Cucumber Java.Scenario: 4.  Filter transactions using branch status.executor&quot;: &quot;Run&quot;,
+    &quot;Cucumber Java.Scenario: 5.  Filter merchant by Authorized status.executor&quot;: &quot;Run&quot;,
+    &quot;Cucumber Java.Scenario: 5.  Filter transactions using Type.executor&quot;: &quot;Run&quot;,
+    &quot;Cucumber Java.Scenario: 6.  Filter transactions using Type.executor&quot;: &quot;Debug&quot;,
+    &quot;Cucumber Java.Scenario: 6.  Filter transactions using date.executor&quot;: &quot;Debug&quot;,
+    &quot;Cucumber Java.Scenario: 6. Filter transactions using date.executor&quot;: &quot;Run&quot;,
+    &quot;Cucumber Java.Scenario: 7. Filter transactions using a date within the valid range.executor&quot;: &quot;Run&quot;,
+    &quot;Cucumber Java.Scenario: Paginate through customer and retrieve the correct number of customer per page.executor&quot;: &quot;Debug&quot;,
+    &quot;Cucumber Java.Scenario: Verify Authentication Fails with Incorrect OTP.executor&quot;: &quot;Run&quot;,
+    &quot;Cucumber Java.Scenario: Verify Authentication Fails with Incorrect passcode.executor&quot;: &quot;Run&quot;,
+    &quot;Cucumber Java.Scenario: Verify authentication failure to login with \&quot;ep_user_auth\&quot; endpoint Token.executor&quot;: &quot;Debug&quot;,
+    &quot;Cucumber Java.Scenario: Verify user status after password setup and OTP authentication.executor&quot;: &quot;Run&quot;,
+    &quot;Cucumber Java.Scenario: Verify user status after password setup and OTP fa.executor&quot;: &quot;Run&quot;,
+    &quot;Cucumber Java.Scenario: validate if the user is register or not.executor&quot;: &quot;Debug&quot;,
+    &quot;JUnit.CucumberTestSuite.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;merchant&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/EagleLion/DBSuperAppDashBoard/src/test/resources/features/customers&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\EagleLion\DBSuperAppDashBoard\src\test\resources\features\customers" />
@@ -75,15 +102,16 @@
       <recent name="org.example" />
     </key>
   </component>
-  <component name="RunManager" selected="Cucumber Java.Feature: customers">
-    <configuration name="Feature: customers" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.CucumberTestSuite">
+    <configuration name="Scenario: 1. Paginate through transactions and retrieve the correct number of transactions without any parameters" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
       <option name="CUCUMBER_CORE_VERSION" value="5" />
-      <option name="FILE_PATH" value="$PROJECT_DIR$/src/test/resources/features/customers/customers.feature" />
+      <option name="FILE_PATH" value="$PROJECT_DIR$/src/test/resources/features/transactions/transaction.feature" />
       <option name="GLUE" value="net.serenitybdd.cucumber.actors starter.step_definitions.auth starter.step_definitions.customers" />
       <option name="MAIN_CLASS_NAME" value="io.cucumber.core.cli.Main" />
       <module name="DBSuperAppDashBoard" />
-      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm5SMFormatter" />
-      <option name="SUGGESTED_NAME" value="Feature: customers" />
+      <option name="NAME_FILTER" value="^1\. Paginate through transactions and retrieve the correct number of transactions without any parameters$" />
+      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm5SMFormatter --name &quot;^1\. Paginate through transactions and retrieve the correct number of transactions without any parameters$&quot;" />
+      <option name="SUGGESTED_NAME" value="Scenario: 1. Paginate through transactions and retrieve the correct number of transactions without any parameters" />
       <option name="WORKING_DIRECTORY" value="$MODULE_WORKING_DIR$" />
       <extension name="coverage">
         <pattern>
@@ -95,15 +123,15 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Scenario: 3. Verify Authentication Fails with Incorrect OTP Token" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
+    <configuration name="Scenario: 1. Search for transactions date" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
       <option name="CUCUMBER_CORE_VERSION" value="5" />
-      <option name="FILE_PATH" value="$PROJECT_DIR$/src/test/resources/features/user_authentication.feature" />
-      <option name="GLUE" value="starter.step_definitions net.serenitybdd.cucumber.actors" />
+      <option name="FILE_PATH" value="$PROJECT_DIR$/src/test/resources/features/transactions/transaction_search_filter.feature" />
+      <option name="GLUE" value="starter.step_definitions.transactions net.serenitybdd.cucumber.actors starter.step_definitions.auth starter.step_definitions.customers" />
       <option name="MAIN_CLASS_NAME" value="io.cucumber.core.cli.Main" />
       <module name="DBSuperAppDashBoard" />
-      <option name="NAME_FILTER" value="^3\. Verify Authentication Fails with Incorrect OTP Token$" />
-      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm5SMFormatter --name &quot;^3\. Verify Authentication Fails with Incorrect OTP Token$&quot;" />
-      <option name="SUGGESTED_NAME" value="Scenario: 3. Verify Authentication Fails with Incorrect OTP Token" />
+      <option name="NAME_FILTER" value="^1\. Search for transactions date$" />
+      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm5SMFormatter --name &quot;^1\. Search for transactions date$&quot;" />
+      <option name="SUGGESTED_NAME" value="Scenario: 1. Search for transactions date" />
       <option name="WORKING_DIRECTORY" value="$MODULE_WORKING_DIR$" />
       <extension name="coverage">
         <pattern>
@@ -115,35 +143,35 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Scenario: 3. Verify Authentication Fails with Incorrect OTP and Token" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
+    <configuration name="Scenario: 6. Filter transactions using date" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
       <option name="CUCUMBER_CORE_VERSION" value="5" />
-      <option name="FILE_PATH" value="$PROJECT_DIR$/src/test/resources/features/user_authentication.feature" />
-      <option name="GLUE" value="starter.step_definitions net.serenitybdd.cucumber.actors" />
-      <option name="MAIN_CLASS_NAME" value="io.cucumber.core.cli.Main" />
-      <module name="DBSuperAppDashBoard" />
-      <option name="NAME_FILTER" value="^3\. Verify Authentication Fails with Incorrect OTP and Token$" />
-      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm5SMFormatter --name &quot;^3\. Verify Authentication Fails with Incorrect OTP and Token$&quot;" />
-      <option name="SUGGESTED_NAME" value="Scenario: 3. Verify Authentication Fails with Incorrect OTP and Token" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_WORKING_DIR$" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="io.cucumber.core.cli.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Scenario: Paginate through customer and retrieve the correct number of customer per page" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
-      <option name="CUCUMBER_CORE_VERSION" value="5" />
-      <option name="FILE_PATH" value="$PROJECT_DIR$/src/test/resources/features/customers/customers.feature" />
+      <option name="FILE_PATH" value="$PROJECT_DIR$/src/test/resources/features/transactions/transaction_search_filter.feature" />
       <option name="GLUE" value="net.serenitybdd.cucumber.actors starter.step_definitions.auth starter.step_definitions.customers" />
       <option name="MAIN_CLASS_NAME" value="io.cucumber.core.cli.Main" />
       <module name="DBSuperAppDashBoard" />
-      <option name="NAME_FILTER" value="^Paginate through customer and retrieve the correct number of customer per page$" />
-      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm5SMFormatter --name &quot;^Paginate through customer and retrieve the correct number of customer per page$&quot;" />
-      <option name="SUGGESTED_NAME" value="Scenario: Paginate through customer and retrieve the correct number of customer per page" />
+      <option name="NAME_FILTER" value="^6\. Filter transactions using date$" />
+      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm5SMFormatter --name &quot;^6\. Filter transactions using date$&quot;" />
+      <option name="SUGGESTED_NAME" value="Scenario: 6. Filter transactions using date" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_WORKING_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="io.cucumber.core.cli.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Scenario: 7. Filter transactions using a date within the valid range" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
+      <option name="CUCUMBER_CORE_VERSION" value="5" />
+      <option name="FILE_PATH" value="$PROJECT_DIR$/src/test/resources/features/transactions/transaction_search_filter.feature" />
+      <option name="GLUE" value="starter.step_definitions.transactions net.serenitybdd.cucumber.actors starter.step_definitions.auth starter.step_definitions.customers" />
+      <option name="MAIN_CLASS_NAME" value="io.cucumber.core.cli.Main" />
+      <module name="DBSuperAppDashBoard" />
+      <option name="NAME_FILTER" value="^7\. Filter transactions using a date within the valid range$" />
+      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm5SMFormatter --name &quot;^7\. Filter transactions using a date within the valid range$&quot;" />
+      <option name="SUGGESTED_NAME" value="Scenario: 7. Filter transactions using a date within the valid range" />
       <option name="WORKING_DIRECTORY" value="$MODULE_WORKING_DIR$" />
       <extension name="coverage">
         <pattern>
@@ -159,7 +187,7 @@
       <module name="DBSuperAppDashBoard" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="starter.assertions.*" />
+          <option name="PATTERN" value="starter.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -172,11 +200,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Cucumber Java.Feature: customers" />
-        <item itemvalue="Cucumber Java.Scenario: Paginate through customer and retrieve the correct number of customer per page" />
         <item itemvalue="JUnit.CucumberTestSuite" />
-        <item itemvalue="Cucumber Java.Scenario: 3. Verify Authentication Fails with Incorrect OTP Token" />
-        <item itemvalue="Cucumber Java.Scenario: 3. Verify Authentication Fails with Incorrect OTP and Token" />
+        <item itemvalue="Cucumber Java.Scenario: 7. Filter transactions using a date within the valid range" />
+        <item itemvalue="Cucumber Java.Scenario: 6. Filter transactions using date" />
+        <item itemvalue="Cucumber Java.Scenario: 1. Search for transactions date" />
+        <item itemvalue="Cucumber Java.Scenario: 1. Paginate through transactions and retrieve the correct number of transactions without any parameters" />
       </list>
     </recent_temporary>
   </component>

@@ -5,6 +5,9 @@ import io.restassured.response.Response;
 import org.junit.Assert;
 import starter.utils.HelperUtils;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 
 import static org.hamcrest.Matchers.containsString;
@@ -120,4 +123,49 @@ public class AssertionsAPI {
         response.then().body(path, containsString(field));
     }
 
+    public static boolean checkDateAfter(String jsonPath, Date refDate) {
+        Response response = getContext(HTTP_RESPONSE.name());
+        List<String> value = response.then().extract().body().jsonPath().getList(jsonPath);
+        SimpleDateFormat outputsFormat = new SimpleDateFormat("yyyy-MM-dd");
+        return value.stream().map(dateStr -> {
+                    try {
+                        return outputsFormat.parse(dateStr);
+                    } catch (ParseException ex) {
+                        throw new RuntimeException("invalid date:" + dateStr);
+                    }
+                }
+
+        ).noneMatch(date -> date.after(refDate));
+    }
+
+    public static boolean checkBeforeDate(String jsonPath, Date refDate) {
+        Response response = getContext(HTTP_RESPONSE.name());
+        List<String> value = response.then().extract().body().jsonPath().getList(jsonPath);
+        SimpleDateFormat outputsFormat = new SimpleDateFormat("yyyy-MM-dd");
+        return value.stream().map(dateStr -> {
+                    try {
+                        return outputsFormat.parse(dateStr);
+                    } catch (ParseException ex) {
+                        throw new RuntimeException("invalid date:" + dateStr);
+                    }
+                }
+
+        ).noneMatch(date -> date.before(refDate));
+    }
+
+    public static boolean checkADateInRange(String jsonPath, Date startDate, Date endDate) {
+        Response response = getContext(HTTP_RESPONSE.name());
+        List<String> value = response.then().extract().body().jsonPath().getList(jsonPath);
+        SimpleDateFormat outputsFormat = new SimpleDateFormat("yyyy-MM-dd");
+        return value.stream().map(dateStr -> {
+                    try {
+                        return outputsFormat.parse(dateStr);
+                    } catch (ParseException ex) {
+                        throw new RuntimeException("invalid date:" + dateStr);
+                    }
+                }
+
+        ).allMatch(date -> !date.before(startDate) && !date.after(endDate));
+    }
 }
+

@@ -101,4 +101,5 @@ public class UserAuthentications {
         postRequestLogin(otpJsonBody, getParameterProperties(endPoint), EnvConfig.getOtpForHeader(), token);
     }
 
+
 }
