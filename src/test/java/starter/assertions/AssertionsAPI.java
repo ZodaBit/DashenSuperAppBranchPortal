@@ -123,46 +123,49 @@ public class AssertionsAPI {
         response.then().body(path, containsString(field));
     }
 
-    public static void checkDate(String jsonPath, String maxDate) {
+    public static boolean checkDateAfter(String jsonPath, Date refDate) {
         Response response = getContext(HTTP_RESPONSE.name());
         List<String> value = response.then().extract().body().jsonPath().getList(jsonPath);
-        SimpleDateFormat sdf=new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS'Z'");
-        try {
-            Date max=sdf.parse(maxDate + "T00:00:00.000Z");
-
-            for (String dateStr : value) {
-                Date currentDate = sdf.parse(dateStr);
-                if (currentDate.after(max)) {
-                    Assert.assertFalse(false);
+        SimpleDateFormat outputsFormat = new SimpleDateFormat("yyyy-MM-dd");
+        return value.stream().map(dateStr -> {
+                    try {
+                        return outputsFormat.parse(dateStr);
+                    } catch (ParseException ex) {
+                        throw new RuntimeException("invalid date:" + dateStr);
+                    }
                 }
-            }
 
-        } catch (ParseException e) {
-
-        }
-        Assert.assertTrue(true);
-
+        ).noneMatch(date -> date.after(refDate));
     }
 
-
-    public static boolean isAnyDateAfter(List<String> dateList, String maxDate) {
-        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS'Z'");
-        try {
-            Date max = sdf.parse(maxDate + "T00:00:00.000Z");  // Parse the max date with time
-
-            for (String dateStr : dateList) {
-                Date currentDate = sdf.parse(dateStr);
-                if (currentDate.after(max)) {
-                    return false;  // Return false if any date is after the max date
+    public static boolean checkBeforeDate(String jsonPath, Date refDate) {
+        Response response = getContext(HTTP_RESPONSE.name());
+        List<String> value = response.then().extract().body().jsonPath().getList(jsonPath);
+        SimpleDateFormat outputsFormat = new SimpleDateFormat("yyyy-MM-dd");
+        return value.stream().map(dateStr -> {
+                    try {
+                        return outputsFormat.parse(dateStr);
+                    } catch (ParseException ex) {
+                        throw new RuntimeException("invalid date:" + dateStr);
+                    }
                 }
-            }
 
-        } catch (ParseException e) {
-            e.printStackTrace();
-            return false;  // Return false if there's a parsing error
-        }
+        ).noneMatch(date -> date.before(refDate));
+    }
 
-        return true;  // Return true if no date is after the max date
+    public static boolean checkADateInRange(String jsonPath, Date startDate, Date endDate) {
+        Response response = getContext(HTTP_RESPONSE.name());
+        List<String> value = response.then().extract().body().jsonPath().getList(jsonPath);
+        SimpleDateFormat outputsFormat = new SimpleDateFormat("yyyy-MM-dd");
+        return value.stream().map(dateStr -> {
+                    try {
+                        return outputsFormat.parse(dateStr);
+                    } catch (ParseException ex) {
+                        throw new RuntimeException("invalid date:" + dateStr);
+                    }
+                }
+
+        ).allMatch(date -> !date.before(startDate) && !date.after(endDate));
     }
 }
 
