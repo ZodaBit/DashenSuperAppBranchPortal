@@ -4,10 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="97885451-64a2-4f0c-b015-9120432f1db7" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/test/resources/features/merchant/merchant.feature" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.github/workflows/api_test_workflow.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/api_test_workflow.yml" afterDir="false" />
+    <list default="true" id="97885451-64a2-4f0c-b015-9120432f1db7" name="Changes" comment="add git work flow">
+      <change afterPath="$PROJECT_DIR$/src/test/java/starter/step_definitions/transactions/TransactionsStepDefinitions.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/features/merchant/merchant_search_filter.feature" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/features/transactions/transaction.feature" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/features/transactions/transaction_search_filter.feature" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/starter/CucumberTestSuite.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/starter/CucumberTestSuite.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/starter/assertions/AssertionsAPI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/starter/assertions/AssertionsAPI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/starter/step_definitions/auth/UserAuthentications.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/starter/step_definitions/auth/UserAuthentications.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/features/customers/customers.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/features/customers/customers.feature" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/features/merchant/merchant.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/features/merchant/merchant.feature" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/parameter.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/parameter.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,9 +50,28 @@
   "keyToString": {
     "Cucumber Java.Feature: UserCheck.executor": "Run",
     "Cucumber Java.Feature: customers.executor": "Run",
+    "Cucumber Java.Feature: transaction.executor": "Run",
     "Cucumber Java.Feature: user_authentication.executor": "Run",
+    "Cucumber Java.Scenario: 1. Paginate through customer and retrieve the correct number of customer without any parameters.executor": "Run",
+    "Cucumber Java.Scenario: 1. Paginate through transactions and retrieve the correct number of transactions without any parameters.executor": "Run",
+    "Cucumber Java.Scenario: 1. Search for merchant account number.executor": "Run",
+    "Cucumber Java.Scenario: 1. Search for transactions account number.executor": "Run",
+    "Cucumber Java.Scenario: 1. Search for transactions date.executor": "Run",
+    "Cucumber Java.Scenario: 2. Paginate through customer and retrieve the correct number of customer per page.executor": "Run",
+    "Cucumber Java.Scenario: 2. Search for merchant using name.executor": "Run",
+    "Cucumber Java.Scenario: 2. Search for transactions using name.executor": "Run",
+    "Cucumber Java.Scenario: 3. Search for merchant using phone number.executor": "Run",
+    "Cucumber Java.Scenario: 3. Search for transactions using transaction Id.executor": "Run",
     "Cucumber Java.Scenario: 3. Verify Authentication Fails with Incorrect OTP Token.executor": "Run",
     "Cucumber Java.Scenario: 3. Verify Authentication Fails with Incorrect OTP and Token.executor": "Run",
+    "Cucumber Java.Scenario: 4.  Filter customers using branch status.executor": "Run",
+    "Cucumber Java.Scenario: 4.  Filter merchant by Authorized status.executor": "Run",
+    "Cucumber Java.Scenario: 4.  Filter transactions using branch status.executor": "Run",
+    "Cucumber Java.Scenario: 5.  Filter merchant by Authorized status.executor": "Run",
+    "Cucumber Java.Scenario: 5.  Filter transactions using Type.executor": "Run",
+    "Cucumber Java.Scenario: 6.  Filter transactions using Type.executor": "Debug",
+    "Cucumber Java.Scenario: 6.  Filter transactions using date.executor": "Debug",
+    "Cucumber Java.Scenario: 6. Filter transactions using date.executor": "Debug",
     "Cucumber Java.Scenario: Paginate through customer and retrieve the correct number of customer per page.executor": "Debug",
     "Cucumber Java.Scenario: Verify Authentication Fails with Incorrect OTP.executor": "Run",
     "Cucumber Java.Scenario: Verify Authentication Fails with Incorrect passcode.executor": "Run",
@@ -52,11 +79,11 @@
     "Cucumber Java.Scenario: Verify user status after password setup and OTP authentication.executor": "Run",
     "Cucumber Java.Scenario: Verify user status after password setup and OTP fa.executor": "Run",
     "Cucumber Java.Scenario: validate if the user is register or not.executor": "Debug",
-    "JUnit.CucumberTestSuite.executor": "Run",
+    "JUnit.CucumberTestSuite.executor": "Debug",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "main",
+    "git-widget-placeholder": "merchant",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "D:/EagleLion/DBSuperAppDashBoard/src/test/resources/features/customers"
   }
@@ -75,15 +102,16 @@
       <recent name="org.example" />
     </key>
   </component>
-  <component name="RunManager" selected="Cucumber Java.Feature: customers">
-    <configuration name="Feature: customers" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.CucumberTestSuite">
+    <configuration name="Scenario: 1. Paginate through transactions and retrieve the correct number of transactions without any parameters" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
       <option name="CUCUMBER_CORE_VERSION" value="5" />
-      <option name="FILE_PATH" value="$PROJECT_DIR$/src/test/resources/features/customers/customers.feature" />
+      <option name="FILE_PATH" value="$PROJECT_DIR$/src/test/resources/features/transactions/transaction.feature" />
       <option name="GLUE" value="net.serenitybdd.cucumber.actors starter.step_definitions.auth starter.step_definitions.customers" />
       <option name="MAIN_CLASS_NAME" value="io.cucumber.core.cli.Main" />
       <module name="DBSuperAppDashBoard" />
-      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm5SMFormatter" />
-      <option name="SUGGESTED_NAME" value="Feature: customers" />
+      <option name="NAME_FILTER" value="^1\. Paginate through transactions and retrieve the correct number of transactions without any parameters$" />
+      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm5SMFormatter --name &quot;^1\. Paginate through transactions and retrieve the correct number of transactions without any parameters$&quot;" />
+      <option name="SUGGESTED_NAME" value="Scenario: 1. Paginate through transactions and retrieve the correct number of transactions without any parameters" />
       <option name="WORKING_DIRECTORY" value="$MODULE_WORKING_DIR$" />
       <extension name="coverage">
         <pattern>
@@ -95,15 +123,15 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Scenario: 3. Verify Authentication Fails with Incorrect OTP Token" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
+    <configuration name="Scenario: 1. Search for transactions date" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
       <option name="CUCUMBER_CORE_VERSION" value="5" />
-      <option name="FILE_PATH" value="$PROJECT_DIR$/src/test/resources/features/user_authentication.feature" />
-      <option name="GLUE" value="starter.step_definitions net.serenitybdd.cucumber.actors" />
+      <option name="FILE_PATH" value="$PROJECT_DIR$/src/test/resources/features/transactions/transaction_search_filter.feature" />
+      <option name="GLUE" value="starter.step_definitions.transactions net.serenitybdd.cucumber.actors starter.step_definitions.auth starter.step_definitions.customers" />
       <option name="MAIN_CLASS_NAME" value="io.cucumber.core.cli.Main" />
       <module name="DBSuperAppDashBoard" />
-      <option name="NAME_FILTER" value="^3\. Verify Authentication Fails with Incorrect OTP Token$" />
-      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm5SMFormatter --name &quot;^3\. Verify Authentication Fails with Incorrect OTP Token$&quot;" />
-      <option name="SUGGESTED_NAME" value="Scenario: 3. Verify Authentication Fails with Incorrect OTP Token" />
+      <option name="NAME_FILTER" value="^1\. Search for transactions date$" />
+      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm5SMFormatter --name &quot;^1\. Search for transactions date$&quot;" />
+      <option name="SUGGESTED_NAME" value="Scenario: 1. Search for transactions date" />
       <option name="WORKING_DIRECTORY" value="$MODULE_WORKING_DIR$" />
       <extension name="coverage">
         <pattern>
@@ -115,15 +143,15 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Scenario: 3. Verify Authentication Fails with Incorrect OTP and Token" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
+    <configuration name="Scenario: 6.  Filter transactions using date" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
       <option name="CUCUMBER_CORE_VERSION" value="5" />
-      <option name="FILE_PATH" value="$PROJECT_DIR$/src/test/resources/features/user_authentication.feature" />
-      <option name="GLUE" value="starter.step_definitions net.serenitybdd.cucumber.actors" />
+      <option name="FILE_PATH" value="$PROJECT_DIR$/src/test/resources/features/transactions/transaction_search_filter.feature" />
+      <option name="GLUE" value="starter.step_definitions.transactions net.serenitybdd.cucumber.actors starter.step_definitions.auth starter.step_definitions.customers" />
       <option name="MAIN_CLASS_NAME" value="io.cucumber.core.cli.Main" />
       <module name="DBSuperAppDashBoard" />
-      <option name="NAME_FILTER" value="^3\. Verify Authentication Fails with Incorrect OTP and Token$" />
-      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm5SMFormatter --name &quot;^3\. Verify Authentication Fails with Incorrect OTP and Token$&quot;" />
-      <option name="SUGGESTED_NAME" value="Scenario: 3. Verify Authentication Fails with Incorrect OTP and Token" />
+      <option name="NAME_FILTER" value="^6\.  Filter transactions using date$" />
+      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm5SMFormatter --name &quot;^6\.  Filter transactions using date$&quot;" />
+      <option name="SUGGESTED_NAME" value="Scenario: 6.  Filter transactions using date" />
       <option name="WORKING_DIRECTORY" value="$MODULE_WORKING_DIR$" />
       <extension name="coverage">
         <pattern>
@@ -135,15 +163,15 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Scenario: Paginate through customer and retrieve the correct number of customer per page" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
+    <configuration name="Scenario: 6. Filter transactions using date" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
       <option name="CUCUMBER_CORE_VERSION" value="5" />
-      <option name="FILE_PATH" value="$PROJECT_DIR$/src/test/resources/features/customers/customers.feature" />
+      <option name="FILE_PATH" value="$PROJECT_DIR$/src/test/resources/features/transactions/transaction_search_filter.feature" />
       <option name="GLUE" value="net.serenitybdd.cucumber.actors starter.step_definitions.auth starter.step_definitions.customers" />
       <option name="MAIN_CLASS_NAME" value="io.cucumber.core.cli.Main" />
       <module name="DBSuperAppDashBoard" />
-      <option name="NAME_FILTER" value="^Paginate through customer and retrieve the correct number of customer per page$" />
-      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm5SMFormatter --name &quot;^Paginate through customer and retrieve the correct number of customer per page$&quot;" />
-      <option name="SUGGESTED_NAME" value="Scenario: Paginate through customer and retrieve the correct number of customer per page" />
+      <option name="NAME_FILTER" value="^6\. Filter transactions using date$" />
+      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm5SMFormatter --name &quot;^6\. Filter transactions using date$&quot;" />
+      <option name="SUGGESTED_NAME" value="Scenario: 6. Filter transactions using date" />
       <option name="WORKING_DIRECTORY" value="$MODULE_WORKING_DIR$" />
       <extension name="coverage">
         <pattern>
@@ -159,7 +187,7 @@
       <module name="DBSuperAppDashBoard" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="starter.assertions.*" />
+          <option name="PATTERN" value="starter.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -172,11 +200,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Cucumber Java.Feature: customers" />
-        <item itemvalue="Cucumber Java.Scenario: Paginate through customer and retrieve the correct number of customer per page" />
         <item itemvalue="JUnit.CucumberTestSuite" />
-        <item itemvalue="Cucumber Java.Scenario: 3. Verify Authentication Fails with Incorrect OTP Token" />
-        <item itemvalue="Cucumber Java.Scenario: 3. Verify Authentication Fails with Incorrect OTP and Token" />
+        <item itemvalue="Cucumber Java.Scenario: 6. Filter transactions using date" />
+        <item itemvalue="Cucumber Java.Scenario: 1. Search for transactions date" />
+        <item itemvalue="Cucumber Java.Scenario: 1. Paginate through transactions and retrieve the correct number of transactions without any parameters" />
+        <item itemvalue="Cucumber Java.Scenario: 6.  Filter transactions using date" />
       </list>
     </recent_temporary>
   </component>
@@ -190,5 +218,76 @@
       <updated>1739339508952</updated>
     </task>
     <servers />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/starter/assertions/AssertionsAPI.java</url>
+          <line>126</line>
+          <option name="timeStamp" value="66" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/starter/assertions/AssertionsAPI.java</url>
+          <line>127</line>
+          <option name="timeStamp" value="67" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/starter/assertions/AssertionsAPI.java</url>
+          <line>128</line>
+          <option name="timeStamp" value="68" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/starter/assertions/AssertionsAPI.java</url>
+          <line>129</line>
+          <option name="timeStamp" value="69" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/starter/step_definitions/transactions/TransactionsStepDefinitions.java</url>
+          <line>9</line>
+          <option name="timeStamp" value="70" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/starter/assertions/AssertionsAPI.java</url>
+          <line>132</line>
+          <option name="timeStamp" value="71" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/starter/assertions/AssertionsAPI.java</url>
+          <line>133</line>
+          <option name="timeStamp" value="72" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/starter/assertions/AssertionsAPI.java</url>
+          <line>134</line>
+          <option name="timeStamp" value="73" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/starter/assertions/AssertionsAPI.java</url>
+          <line>135</line>
+          <option name="timeStamp" value="74" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/starter/assertions/AssertionsAPI.java</url>
+          <line>136</line>
+          <option name="timeStamp" value="75" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/starter/assertions/AssertionsAPI.java</url>
+          <line>139</line>
+          <option name="timeStamp" value="76" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/starter/assertions/AssertionsAPI.java</url>
+          <line>141</line>
+          <option name="timeStamp" value="77" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/starter/assertions/AssertionsAPI.java</url>
+          <line>142</line>
+          <option name="timeStamp" value="78" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

@@ -5,6 +5,9 @@ import io.restassured.response.Response;
 import org.junit.Assert;
 import starter.utils.HelperUtils;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 
 import static org.hamcrest.Matchers.containsString;
@@ -120,4 +123,46 @@ public class AssertionsAPI {
         response.then().body(path, containsString(field));
     }
 
+    public static void checkDate(String jsonPath, String maxDate) {
+        Response response = getContext(HTTP_RESPONSE.name());
+        List<String> value = response.then().extract().body().jsonPath().getList(jsonPath);
+        SimpleDateFormat sdf=new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS'Z'");
+        try {
+            Date max=sdf.parse(maxDate + "T00:00:00.000Z");
+
+            for (String dateStr : value) {
+                Date currentDate = sdf.parse(dateStr);
+                if (currentDate.after(max)) {
+                    Assert.assertFalse(false);
+                }
+            }
+
+        } catch (ParseException e) {
+
+        }
+        Assert.assertTrue(true);
+
+    }
+
+
+    public static boolean isAnyDateAfter(List<String> dateList, String maxDate) {
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS'Z'");
+        try {
+            Date max = sdf.parse(maxDate + "T00:00:00.000Z");  // Parse the max date with time
+
+            for (String dateStr : dateList) {
+                Date currentDate = sdf.parse(dateStr);
+                if (currentDate.after(max)) {
+                    return false;  // Return false if any date is after the max date
+                }
+            }
+
+        } catch (ParseException e) {
+            e.printStackTrace();
+            return false;  // Return false if there's a parsing error
+        }
+
+        return true;  // Return true if no date is after the max date
+    }
 }
+

@@ -8,8 +8,9 @@ import org.junit.runner.RunWith;
 @RunWith(CucumberWithSerenity.class)
 @CucumberOptions(
         plugin = {"pretty"},
-        features = "src/test/resources/features",
+        features = "src/test/resources/features/transactions/transaction_search_filter.feature",
         glue = {"starter.step_definitions",}
+
 )
 public class CucumberTestSuite {
 }

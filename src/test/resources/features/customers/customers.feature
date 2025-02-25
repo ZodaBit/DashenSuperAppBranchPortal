@@ -20,3 +20,4 @@ Feature: Customer Pagination Functionality
       | 1     |
       | 5     |
       | 100   |
+
