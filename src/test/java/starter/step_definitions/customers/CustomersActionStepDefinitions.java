@@ -4,6 +4,7 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.When;
 import starter.utils.EnvConfig;
 
+import static starter.assertions.AssertionsAPI.checkEachItemInResponseContains;
 import static starter.utils.BranchApiHelper.postRequestLogin;
 import static starter.utils.JsonBodyHelperUtils.*;
 import static starter.utils.PropertiesReader.getParameterProperties;
@@ -38,5 +39,10 @@ public class CustomersActionStepDefinitions {
         String otpJsonBody = String.format(USER_CODE_CHECKER_DENIED_JSON,status,userCode);
         String token = getContext(ACCESS_TOKEN.name());
         postRequestLogin(otpJsonBody, getParameterProperties("ep_customer_checker_actions_access_limit"), EnvConfig.getOtpForHeader(), token);
+    }
+
+    @And("Each item of repsonse by {string} should contain {string}")
+    public void eachItemOfRepsonseByShouldContain(String jsonPath, String fieldValue) {
+        checkEachItemInResponseContains(jsonPath,fieldValue);
     }
 }

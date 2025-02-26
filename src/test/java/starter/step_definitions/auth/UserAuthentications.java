@@ -7,8 +7,7 @@ import io.cucumber.java.en.When;
 import starter.utils.EnvConfig;
 import starter.utils.HelperUtils;
 
-import static starter.assertions.AssertionsAPI.checkResponseContains;
-import static starter.assertions.AssertionsAPI.checkResponseStatusCode;
+import static starter.assertions.AssertionsAPI.*;
 import static starter.utils.BranchApiHelper.postRequest;
 import static starter.utils.BranchApiHelper.postRequestLogin;
 import static starter.utils.JsonBodyHelperUtils.*;
@@ -39,7 +38,6 @@ public class UserAuthentications {
             checkResponseContains(jsonPath, field);
         }
     }
-
 
     @When("I make a POST request to {string} with OTP payload and Auth header")
     public void iMakeAPOSTRequestToWithOTPPayloadAndAuthHeader(String arg0) {
@@ -102,4 +100,8 @@ public class UserAuthentications {
     }
 
 
+    @And("the response {string} should contain one or more items")
+    public void theResponseShouldContainOneOrMoreItems(String jsonpath) {
+        checkResponseContainOneAndMoreThanOneItem(jsonpath);
+    }
 }

@@ -9,6 +9,7 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
+import java.util.stream.Collectors;
 
 import static org.hamcrest.Matchers.containsString;
 import static org.hamcrest.Matchers.hasSize;
@@ -50,6 +51,12 @@ public class AssertionsAPI {
         List<String> value = response.then().extract().body().jsonPath().getList(jsonPath, String.class);
         value.stream().forEach(s -> Assert.assertTrue("Current value: " + s,
                 s.toLowerCase().contains(field.toLowerCase())));
+    }
+
+    public static void checkResponseContainOneAndMoreThanOneItem(String jsonPath) {
+        Response response = getContext(HTTP_RESPONSE.name());
+       int countedValue= response.then().extract().body().jsonPath().getList(jsonPath).size();
+       Assert.assertTrue(countedValue>=1);
     }
 
     /**

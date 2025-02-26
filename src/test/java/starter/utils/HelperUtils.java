@@ -57,7 +57,7 @@ public class HelperUtils {
         try {
             return objectMapper.readValue(json, clazz);
         } catch (Exception e) {
-            log.error("Failed to convert json to object", e);
+           // log.error("Failed to convert json to object", e);
             return null;
         }
     }
@@ -66,7 +66,7 @@ public class HelperUtils {
         try {
             return objectMapper.writeValueAsString(object);
         } catch (Exception e) {
-            log.error("Failed to convert object to json", e);
+          //  log.error("Failed to convert object to json", e);
             return null;
         }
     }

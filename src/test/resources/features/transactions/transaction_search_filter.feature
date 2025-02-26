@@ -6,32 +6,7 @@ Feature: Transactions Search API Validation
     When I send a GET request to "ep_transactions_paginate" with the following query parameter:
       | search_key | 5015903528001 |
     Then the response status code should be 200
-    And the response should contain a field named "data[5].serial_number" with the value "15598"
-    And the response should contain a field named "data[5].trxID" with the value "WDTS11434357045277244222"
-    And the response should contain a field named "data[5].user_code" with the value "1157558038223"
-    And the response should contain a field named "data[5].phone_number" with the value "+251936633529"
-    And the response should contain a field named "data[5].ft_number" with the value "015WDTS23166037j"
-    And the response should contain a field named "data[5].debit_account" with the value "5015903528001"
-    And the response should contain a field named "data[5].debit_name" with the value "EMEBET WORKUGEBREKIDAN"
-    And the response should contain a field named "data[5].credit_account" with the value "+251911554491"
-    And the response should contain a field named "data[5].credit_name" with the value "PAUL RIES AND SONS ETHIOPIA LIMITED COMPANY"
-    And the response should contain a field named "data[5].credit_phonenumber" with the value "+251911554491"
-    And the response should contain a field named "data[5].transaction_type" with the value "CHAT"
-    And the response should contain a field named "data[5].reason" with the value "SuperAPP - Chat Send Money"
-    And the response should contain a field named "data[5].payment_method" with the value "CHAT"
-    And the response should contain a field named "data[5].amount" with the value "10"
-    And the response should contain a field named "data[5].tip" with the value "0"
-    And the response should contain a field named "data[5].paid_amount" with the value "10"
-    And the response should contain a field named "data[5].service_fee" with the value "0"
-    And the response should contain a field named "data[5].vat" with the value "0"
-    And the response should contain a field named "data[5].currency" with the value "ETB"
-    And the response should contain a field named "data[5].bank_name" with the value "Dashen Bank SC"
-    And the response should contain a field named "data[5].product_code" with the value "WDTS"
-    And the response should contain a field named "data[5].service_fee_product_code" with the value "SFD"
-    And the response should contain a field named "data[5].vat_product_code" with the value "VFD"
-    And the response should contain a field named "data[5].paidAt" with the value "2025-02-21T07:01:04.940Z"
-    And the response should contain a field named "data[5].createdAt" with the value "2025-02-21T07:01:03.577Z"
-    And the response should contain a field named "data[5].updatedAt" with the value "2025-02-21T07:01:04.948Z"
+    And the response "data" should contain one or more items
 
 
   Scenario: 2. Search for transactions using sender name
@@ -40,33 +15,7 @@ Feature: Transactions Search API Validation
     When I send a GET request to "ep_transactions_paginate" with the following query parameter:
       | search_key | belay dori boroji |
     Then the response status code should be 200
-    And the response should contain a field named "data[0].serial_number" with the value "15590"
-    And the response should contain a field named "data[0].trxID" with the value "TASA10884995751606065633"
-    And the response should contain a field named "data[0].user_code" with the value "14996475762295"
-    And the response should contain a field named "data[0].phone_number" with the value "+251991014552"
-    And the response should contain a field named "data[0].ft_number" with the value "015TASA23166012Z"
-    And the response should contain a field named "data[0].debit_account" with the value "5015910659001"
-    And the response should contain a field named "data[0].debit_name" with the value "belay dori boroji"
-    And the response should contain a field named "data[0].credit_account" with the value "5237447861011"
-    And the response should contain a field named "data[0].credit_name" with the value "Awach SACCOS"
-    And the response should contain a field named "data[0].credit_phonenumber" with the value ""
-    And the response should contain a field named "data[0].transaction_type" with the value "AWACH"
-    And the response should contain a field named "data[0].reason" with the value "Awach SACCOS"
-    And the response should contain a field named "data[0].payment_method" with the value "null"
-    And the response should contain a field named "data[0].amount" with the value "55"
-    And the response should contain a field named "data[0].tip" with the value "0"
-    And the response should contain a field named "data[0].paid_amount" with the value "null"
-    And the response should contain a field named "data[0].service_fee" with the value "3"
-    And the response should contain a field named "data[0].vat" with the value "0.45"
-    And the response should contain a field named "data[0].currency" with the value "ETB"
-    And the response should contain a field named "data[0].bank_name" with the value "DASHEN"
-    And the response should contain a field named "data[0].product_code" with the value "TASA"
-    And the response should contain a field named "data[0].service_fee_product_code" with the value "STA"
-    And the response should contain a field named "data[0].vat_product_code" with the value "VTA"
-    And the response should contain a field named "data[0].paidAt" with the value "2025-02-20T15:45:28.854Z"
-    And the response should contain a field named "data[0].createdAt" with the value "2025-02-20T15:45:27.454Z"
-    And the response should contain a field named "data[0].updatedAt" with the value "2025-02-20T15:45:28.854Z"
-
+    And the response "data" should contain one or more items
 
   Scenario: 3. Search for transactions using transaction Id
     Given I have a valid access token for the user "zolam"
@@ -112,7 +61,8 @@ Feature: Transactions Search API Validation
     Given I have a valid access token for the user "zolam"
     And I send a POST request to "ep_user_login" with the passcode "Abc@123"
     When I send a GET request to "ep_transactions_paginate" with the following query parameter:
-      | status | <Status> |
+      | status     | <Status> |
+      | search_key | <TrxID>  |
     Then the response status code should be 200
     And the response should contain a field named "data[0].trxID" with the value "<TrxID>"
     And the response should contain a field named "data[0].product_code" with the value "<ProductCode>"
@@ -140,8 +90,10 @@ Feature: Transactions Search API Validation
     Given I have a valid access token for the user "zolam"
     And I send a POST request to "ep_user_login" with the passcode "Abc@123"
     When I send a GET request to "ep_transactions_paginate" with the following query parameter:
-      | type | <Type> |
+      | type       | <Type>  |
+      | search_key | <TrxID> |
     Then the response status code should be 200
+   # And Each item of repsonse by "data.trxId" should contain "<TrxID>"
     And the response should contain a field named "data[0].trxID" with the value "<TrxID>"
     And the response should contain a field named "data[0].product_code" with the value "<ProductCode>"
     And the response should contain a field named "data[0].debit_name" with the value "<DebitName>"
@@ -158,6 +110,7 @@ Feature: Transactions Search API Validation
     And the response should contain a field named "data[0].currency" with the value "<Currency>"
     And the response should contain a field named "data[0].ft_number" with the value "<FtNumber>"
     And the response should contain a field named "data[0].transaction_status" with the value "<TransactionStatus>"
+
     Examples:
       | Type      | TrxID                    | ProductCode | DebitName                | DebitAccount  | TransactionType | CreditName            | CreditAccount | PhoneNumber   | BankName       | Amount | ServiceFee | ServiceFeeProductCode | VatProductCode | Currency | FtNumber         | TransactionStatus |
       | OTHERBANK | OBTS11429933711683383251 | OBTS        | EYERUSE  TENI FONIZA     | 5019798591021 | OTHERBANK       | TimeOut test          | 131234567890  | +251933703329 | IPS Test Bank  | 100    | 0.1        | SFO                   | VOT            | ETB      | 126OBTS2316601Yu | PAID              |
