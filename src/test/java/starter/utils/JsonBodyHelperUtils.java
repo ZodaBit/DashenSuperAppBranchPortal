@@ -2,11 +2,7 @@ package starter.utils;
 
 public class JsonBodyHelperUtils {
 
-    public static String USER_PASSCODE_JSON = """
-            {
-            "username": "%s"
-            }
-            """;
+
 
 
     public static String OTP_CODE_JSON = """
@@ -15,13 +11,7 @@ public class JsonBodyHelperUtils {
             }
             """;
 
-    public static String USER_PASSWORD_JSON = """
-                        
-             {
-                 "password": "%s"
-             }
-                        
-            """;
+
 
     public static String USER_CODE_JSON = """
                         
@@ -90,6 +80,8 @@ public class JsonBodyHelperUtils {
                 }
             }
             """;
+
+
 
 
 }

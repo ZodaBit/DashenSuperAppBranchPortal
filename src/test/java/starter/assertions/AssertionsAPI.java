@@ -32,6 +32,7 @@ public class AssertionsAPI {
         Assert.assertEquals(field, value);
     }
 
+
     /**
      * Validate each value in the response list
      *

@@ -38,5 +38,7 @@ public class TestGlobalVariables {
         OTP_CODE,
         ACCESS_TOKEN,
         HTTP_RESPONSE,
+        HTTP_RESPONSE_ACTION,
+        HTTP_RESPONSE_LOGIN,
     }
 }

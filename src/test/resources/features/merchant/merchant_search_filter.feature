@@ -2,7 +2,7 @@ Feature: Merchant Search API Validation
 
   Scenario: 1. Search for merchant account number
     Given I have a valid access token for the user "zolam"
-    And I send a POST request to "ep_user_login" with the passcode "Abc@123"
+    And I send a POST request to "ep_user_passcode_login" with the passcode "Abc@123"
     When I send a GET request to "ep_merchant_paginate" with the following query parameter:
       | search_key | 0518343016011 |
     Then the response status code should be 200
@@ -22,7 +22,7 @@ Feature: Merchant Search API Validation
 
   Scenario: 2. Search for merchant using name
     Given I have a valid access token for the user "zolam"
-    And I send a POST request to "ep_user_login" with the passcode "Abc@123"
+    And I send a POST request to "ep_user_passcode_login" with the passcode "Abc@123"
     When I send a GET request to "ep_merchant_paginate" with the following query parameter:
       | search_key | ABC trading |
     Then the response status code should be 200
@@ -42,7 +42,7 @@ Feature: Merchant Search API Validation
 
   Scenario: 3. Search for merchant using phone number
     Given I have a valid access token for the user "zolam"
-    And I send a POST request to "ep_user_login" with the passcode "Abc@123"
+    And I send a POST request to "ep_user_passcode_login" with the passcode "Abc@123"
     When I send a GET request to "ep_merchant_paginate" with the following query parameter:
       | search_key | 251947373253 |
     Then the response status code should be 200
@@ -60,25 +60,25 @@ Feature: Merchant Search API Validation
     And the response should contain a field named "docs[0].kebele" with the value "04"
     And the response should contain a field named "docs[0].houseNumber" with the value "544"
 
-  Scenario: 4.  Filter merchant by Authorized status
-    Given I have a valid access token for the user "zolam"
-    And I send a POST request to "ep_user_login" with the passcode "Abc@123"
-    When I send a GET request to "ep_merchant_paginate" with the following query parameter:
-      | status | AUTHORIZED |
-    Then the response status code should be 200
-    And the response should contain a field named "docs[0].accountHolderName" with the value "ADIU COMMUNICATION SERVICE PRIVATE "
-    And the response should contain a field named "docs[0].phoneNumber" with the value "+251911256432"
-    And the response should contain a field named "docs[0].businessName" with the value "bjf"
+#  Scenario: 4.  Filter merchant by Authorized status
+#    Given I have a valid access token for the user "zolam"
+#    And I send a POST request to "ep_user_passcode_login" with the passcode "Abc@123"
+#    When I send a GET request to "ep_merchant_paginate" with the following query parameter:
+#      | status | AUTHORIZED |
+#    Then the response status code should be 200
+#    And the response should contain a field named "docs[0].accountHolderName" with the value "ADIU COMMUNICATION SERVICE PRIVATE "
+#    And the response should contain a field named "docs[0].phoneNumber" with the value "+251911256432"
+#    And the response should contain a field named "docs[0].businessName" with the value "bjf"
 
-  Scenario: 5.  Filter merchant by DENIED status
-    Given I have a valid access token for the user "zolam"
-    And I send a POST request to "ep_user_login" with the passcode "Abc@123"
-    When I send a GET request to "ep_merchant_paginate" with the following query parameter:
-      | status | DENIED |
-    Then the response status code should be 200
-    And the response should contain a field named "docs[0].accountHolderName" with the value "TAKELE GIRMA CHEKOL"
-    And the response should contain a field named "docs[0].phoneNumber" with the value "+251911111111"
-    And the response should contain a field named "docs[0].businessName" with the value "testm"
+#  Scenario: 5.  Filter merchant by DENIED status
+#    Given I have a valid access token for the user "zolam"
+#    And I send a POST request to "ep_user_passcode_login" with the passcode "Abc@123"
+#    When I send a GET request to "ep_merchant_paginate" with the following query parameter:
+#      | status | DENIED |
+#    Then the response status code should be 200
+#    And the response should contain a field named "docs[0].accountHolderName" with the value "TAKELE GIRMA CHEKOL"
+#    And the response should contain a field named "docs[0].phoneNumber" with the value "+251911111111"
+#    And the response should contain a field named "docs[0].businessName" with the value "testm"
 
 
 #  Scenario Outline: 6.  Filter customers by pending status

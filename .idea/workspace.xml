@@ -5,16 +5,27 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="97885451-64a2-4f0c-b015-9120432f1db7" name="Changes" comment="add git work flow">
+      <change afterPath="$PROJECT_DIR$/src/test/java/starter/utils/jsons/AuthJson.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/starter/utils/jsons/ChangePhoneNumberJson.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/features/customers/actions/change_phone_number.feature" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/starter/CucumberTestSuite.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/starter/CucumberTestSuite.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/starter/assertions/AssertionsAPI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/starter/assertions/AssertionsAPI.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/starter/step_definitions/auth/UserAuthentications.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/starter/step_definitions/auth/UserAuthentications.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/starter/step_definitions/customers/CustomersActionStepDefinitions.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/starter/step_definitions/customers/CustomersActionStepDefinitions.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/starter/step_definitions/customers/CustomersStepDefinitions.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/starter/step_definitions/customers/CustomersStepDefinitions.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/starter/utils/BranchApiHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/starter/utils/BranchApiHelper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/starter/utils/EnvConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/starter/utils/EnvConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/starter/utils/HelperUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/starter/utils/HelperUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/starter/utils/JsonBodyHelperUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/starter/utils/JsonBodyHelperUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/starter/utils/TestGlobalVariables.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/starter/utils/TestGlobalVariables.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/resources/features/auth/user_authentication.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/features/auth/user_authentication.feature" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/features/customers/actions.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/features/customers/actions.feature" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/features/customers/customers.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/features/customers/customers.feature" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/features/customers/customers_search_filter.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/features/customers/customers_search_filter.feature" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/features/merchant/merchant.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/features/merchant/merchant.feature" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/features/merchant/merchant_search_filter.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/features/merchant/merchant_search_filter.feature" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/features/transactions/transaction.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/features/transactions/transaction.feature" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/resources/features/transactions/transaction_search_filter.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/features/transactions/transaction_search_filter.feature" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/parameter.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/parameter.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,27 +59,41 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "Cucumber Java.Feature: UserCheck.executor": "Run",
+    "Cucumber Java.Feature: actions.executor": "Debug",
+    "Cucumber Java.Feature: change_phone_number.executor": "Run",
     "Cucumber Java.Feature: customers.executor": "Run",
+    "Cucumber Java.Feature: customers_search_filter.executor": "Run",
+    "Cucumber Java.Feature: merchant.executor": "Run",
+    "Cucumber Java.Feature: merchant_search_filter.executor": "Run",
     "Cucumber Java.Feature: transaction.executor": "Run",
     "Cucumber Java.Feature: transaction_search_filter.executor": "Run",
-    "Cucumber Java.Feature: user_authentication.executor": "Debug",
+    "Cucumber Java.Feature: user_authentication.executor": "Run",
     "Cucumber Java.Scenario: 1. Paginate through customer and retrieve the correct number of customer without any parameters.executor": "Run",
     "Cucumber Java.Scenario: 1. Paginate through transactions and retrieve the correct number of transactions without any parameters.executor": "Run",
+    "Cucumber Java.Scenario: 1. Search for customers account number.executor": "Run",
     "Cucumber Java.Scenario: 1. Search for merchant account number.executor": "Run",
-    "Cucumber Java.Scenario: 1. Search for transactions account number.executor": "Debug",
+    "Cucumber Java.Scenario: 1. Search for transactions account number.executor": "Run",
     "Cucumber Java.Scenario: 1. Search for transactions date.executor": "Run",
+    "Cucumber Java.Scenario: 1. Verify that the user has set a password after authentication.executor": "Run",
     "Cucumber Java.Scenario: 1. reset pin.executor": "Run",
     "Cucumber Java.Scenario: 2. Paginate through customer and retrieve the correct number of customer per page.executor": "Run",
     "Cucumber Java.Scenario: 2. Search for merchant using name.executor": "Run",
     "Cucumber Java.Scenario: 2. Search for transactions using name.executor": "Run",
+    "Cucumber Java.Scenario: 2. Search for transactions using sender name.executor": "Run",
     "Cucumber Java.Scenario: 2. Verify authentication succeeds with the correct OTP and token.executor": "Run",
+    "Cucumber Java.Scenario: 3. Search for customers using phone number.executor": "Run",
     "Cucumber Java.Scenario: 3. Search for merchant using phone number.executor": "Run",
     "Cucumber Java.Scenario: 3. Search for transactions using transaction Id.executor": "Run",
     "Cucumber Java.Scenario: 3. Verify Authentication Fails with Incorrect OTP Token.executor": "Run",
     "Cucumber Java.Scenario: 3. Verify Authentication Fails with Incorrect OTP and Token.executor": "Run",
+    "Cucumber Java.Scenario: 3. Verify Change Phone Number Action With OTP Option and Using an Existing Phone Number.executor": "Run",
+    "Cucumber Java.Scenario: 3. Verify Change Phone Number Action Without OTP and Using an Existing Phone Number.executor": "Run",
     "Cucumber Java.Scenario: 4.  Filter customers using branch status.executor": "Run",
     "Cucumber Java.Scenario: 4.  Filter merchant by Authorized status.executor": "Run",
     "Cucumber Java.Scenario: 4.  Filter transactions using branch status.executor": "Run",
+    "Cucumber Java.Scenario: 4. Verify Authentication Fails with Incorrect passcode.executor": "Run",
+    "Cucumber Java.Scenario: 4. Verify Change Phone Number Action With OTP Using an Existing Phone Number.executor": "Run",
+    "Cucumber Java.Scenario: 4. Verify Change Phone Number Denied Action as a maker and a checker With OTP option and a Valid Phone Number.executor": "Run",
     "Cucumber Java.Scenario: 5.  Filter merchant by Authorized status.executor": "Run",
     "Cucumber Java.Scenario: 5.  Filter transactions using Type.executor": "Run",
     "Cucumber Java.Scenario: 6.  Filter transactions using Type.executor": "Debug",
@@ -78,6 +103,13 @@
     "Cucumber Java.Scenario: Paginate through customer and retrieve the correct number of customer per page.executor": "Debug",
     "Cucumber Java.Scenario: Verify Authentication Fails with Incorrect OTP.executor": "Run",
     "Cucumber Java.Scenario: Verify Authentication Fails with Incorrect passcode.executor": "Run",
+    "Cucumber Java.Scenario: Verify Change Phone Number AUTHORIZED Action as a maker and a checker Without OTP option and a Valid Phone Number.executor": "Run",
+    "Cucumber Java.Scenario: Verify Change Phone Number Action With OTP Option and Using an Existing Phone Number.executor": "Run",
+    "Cucumber Java.Scenario: Verify Change Phone Number Action Without OTP Option and Current Phone number.executor": "Run",
+    "Cucumber Java.Scenario: Verify Change Phone Number Action Without OTP Option and Using an Existing Phone Number.executor": "Run",
+    "Cucumber Java.Scenario: Verify Change Phone Number Denied Action as a maker and a checker With OTP option and a Valid Phone Number.executor": "Run",
+    "Cucumber Java.Scenario: Verify Change Phone Number Denied Action as a maker and a checker Without OTP option and a Valid Phone Number.executor": "Run",
+    "Cucumber Java.Scenario: Verify Change Phone Number Denied Action as a maker and a checker Without OTP.executor": "Run",
     "Cucumber Java.Scenario: Verify authentication failure to login with \"ep_user_auth\" endpoint Token.executor": "Debug",
     "Cucumber Java.Scenario: Verify user status after password setup and OTP authentication.executor": "Run",
     "Cucumber Java.Scenario: Verify user status after password setup and OTP fa.executor": "Run",
@@ -90,6 +122,7 @@
     "RunOnceActivity.git.unshallow": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "git-widget-placeholder": "actions",
+    "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "C:/Users/zelal/Downloads/TelusApiAts/TelusApiAts",
     "project.structure.last.edited": "Libraries",
@@ -112,15 +145,16 @@
       <recent name="org.example" />
     </key>
   </component>
-  <component name="RunManager" selected="Cucumber Java.Feature: user_authentication">
-    <configuration name="Feature: transaction_search_filter" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Cucumber Java.Scenario: Verify Change Phone Number Denied Action as a maker and a checker Without OTP option and a Valid Phone Number">
+    <configuration name="Scenario: 3. Verify Change Phone Number Action With OTP Option and Using an Existing Phone Number" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
       <option name="CUCUMBER_CORE_VERSION" value="5" />
-      <option name="FILE_PATH" value="$PROJECT_DIR$/src/test/resources/features/transactions/transaction_search_filter.feature" />
+      <option name="FILE_PATH" value="$PROJECT_DIR$/src/test/resources/features/customers/actions/change_phone_number.feature" />
       <option name="GLUE" value="net.serenitybdd.cucumber.actors starter.step_definitions.auth starter.step_definitions.customers" />
       <option name="MAIN_CLASS_NAME" value="io.cucumber.core.cli.Main" />
       <module name="DBSuperAppDashBoard" />
-      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm5SMFormatter" />
-      <option name="SUGGESTED_NAME" value="Feature: transaction_search_filter" />
+      <option name="NAME_FILTER" value="^3\. Verify Change Phone Number Action With OTP Option and Using an Existing Phone Number$" />
+      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm5SMFormatter --name &quot;^3\. Verify Change Phone Number Action With OTP Option and Using an Existing Phone Number$&quot;" />
+      <option name="SUGGESTED_NAME" value="Scenario: 3. Verify Change Phone Number Action With OTP Option and Using an Existing Phone Number" />
       <option name="WORKING_DIRECTORY" value="$MODULE_WORKING_DIR$" />
       <extension name="coverage">
         <pattern>
@@ -132,14 +166,15 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Feature: user_authentication" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
+    <configuration name="Scenario: 4. Verify Change Phone Number Denied Action as a maker and a checker With OTP option and a Valid Phone Number" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
       <option name="CUCUMBER_CORE_VERSION" value="5" />
-      <option name="FILE_PATH" value="$PROJECT_DIR$/src/test/resources/features/auth/user_authentication.feature" />
+      <option name="FILE_PATH" value="$PROJECT_DIR$/src/test/resources/features/customers/actions/change_phone_number.feature" />
       <option name="GLUE" value="net.serenitybdd.cucumber.actors starter.step_definitions.auth starter.step_definitions.customers" />
       <option name="MAIN_CLASS_NAME" value="io.cucumber.core.cli.Main" />
       <module name="DBSuperAppDashBoard" />
-      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm5SMFormatter" />
-      <option name="SUGGESTED_NAME" value="Feature: user_authentication" />
+      <option name="NAME_FILTER" value="^4\. Verify Change Phone Number Denied Action as a maker and a checker With OTP option and a Valid Phone Number$" />
+      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm5SMFormatter --name &quot;^4\. Verify Change Phone Number Denied Action as a maker and a checker With OTP option and a Valid Phone Number$&quot;" />
+      <option name="SUGGESTED_NAME" value="Scenario: 4. Verify Change Phone Number Denied Action as a maker and a checker With OTP option and a Valid Phone Number" />
       <option name="WORKING_DIRECTORY" value="$MODULE_WORKING_DIR$" />
       <extension name="coverage">
         <pattern>
@@ -151,15 +186,15 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Scenario: 1. Search for transactions account number" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
+    <configuration name="Scenario: Verify Change Phone Number Action Without OTP Option and Current Phone number" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
       <option name="CUCUMBER_CORE_VERSION" value="5" />
-      <option name="FILE_PATH" value="$PROJECT_DIR$/src/test/resources/features/transactions/transaction_search_filter.feature" />
+      <option name="FILE_PATH" value="$PROJECT_DIR$/src/test/resources/features/customers/actions/change_phone_number.feature" />
       <option name="GLUE" value="net.serenitybdd.cucumber.actors starter.step_definitions.auth starter.step_definitions.customers" />
       <option name="MAIN_CLASS_NAME" value="io.cucumber.core.cli.Main" />
       <module name="DBSuperAppDashBoard" />
-      <option name="NAME_FILTER" value="^1\. Search for transactions account number$" />
-      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm5SMFormatter --name &quot;^1\. Search for transactions account number$&quot;" />
-      <option name="SUGGESTED_NAME" value="Scenario: 1. Search for transactions account number" />
+      <option name="NAME_FILTER" value="^Verify Change Phone Number Action Without OTP Option and Current Phone number$" />
+      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm5SMFormatter --name &quot;^Verify Change Phone Number Action Without OTP Option and Current Phone number$&quot;" />
+      <option name="SUGGESTED_NAME" value="Scenario: Verify Change Phone Number Action Without OTP Option and Current Phone number" />
       <option name="WORKING_DIRECTORY" value="$MODULE_WORKING_DIR$" />
       <extension name="coverage">
         <pattern>
@@ -171,15 +206,15 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Scenario: 5.  Filter transactions using Type" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
+    <configuration name="Scenario: Verify Change Phone Number Denied Action as a maker and a checker With OTP option and a Valid Phone Number" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
       <option name="CUCUMBER_CORE_VERSION" value="5" />
-      <option name="FILE_PATH" value="$PROJECT_DIR$/src/test/resources/features/transactions/transaction_search_filter.feature" />
-      <option name="GLUE" value="starter.step_definitions.transactions net.serenitybdd.cucumber.actors starter.step_definitions.auth starter.step_definitions.customers" />
+      <option name="FILE_PATH" value="$PROJECT_DIR$/src/test/resources/features/customers/actions/change_phone_number.feature" />
+      <option name="GLUE" value="net.serenitybdd.cucumber.actors starter.step_definitions.auth starter.step_definitions.customers" />
       <option name="MAIN_CLASS_NAME" value="io.cucumber.core.cli.Main" />
       <module name="DBSuperAppDashBoard" />
-      <option name="NAME_FILTER" value="^5\.  Filter transactions using Type$" />
-      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm5SMFormatter --name &quot;^5\.  Filter transactions using Type$&quot;" />
-      <option name="SUGGESTED_NAME" value="Scenario: 5.  Filter transactions using Type" />
+      <option name="NAME_FILTER" value="^Verify Change Phone Number Denied Action as a maker and a checker With OTP option and a Valid Phone Number$" />
+      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm5SMFormatter --name &quot;^Verify Change Phone Number Denied Action as a maker and a checker With OTP option and a Valid Phone Number$&quot;" />
+      <option name="SUGGESTED_NAME" value="Scenario: Verify Change Phone Number Denied Action as a maker and a checker With OTP option and a Valid Phone Number" />
       <option name="WORKING_DIRECTORY" value="$MODULE_WORKING_DIR$" />
       <extension name="coverage">
         <pattern>
@@ -191,28 +226,33 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="CucumberTestSuite" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="Scenario: Verify Change Phone Number Denied Action as a maker and a checker Without OTP option and a Valid Phone Number" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
+      <option name="CUCUMBER_CORE_VERSION" value="5" />
+      <option name="FILE_PATH" value="$PROJECT_DIR$/src/test/resources/features/customers/actions/change_phone_number.feature" />
+      <option name="GLUE" value="net.serenitybdd.cucumber.actors starter.step_definitions.auth starter.step_definitions.customers" />
+      <option name="MAIN_CLASS_NAME" value="io.cucumber.core.cli.Main" />
       <module name="DBSuperAppDashBoard" />
+      <option name="NAME_FILTER" value="^Verify Change Phone Number Denied Action as a maker and a checker Without OTP option and a Valid Phone Number$" />
+      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm5SMFormatter --name &quot;^Verify Change Phone Number Denied Action as a maker and a checker Without OTP option and a Valid Phone Number$&quot;" />
+      <option name="SUGGESTED_NAME" value="Scenario: Verify Change Phone Number Denied Action as a maker and a checker Without OTP option and a Valid Phone Number" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_WORKING_DIR$" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="starter.*" />
+          <option name="PATTERN" value="io.cucumber.core.cli.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="starter" />
-      <option name="MAIN_CLASS_NAME" value="starter.CucumberTestSuite" />
-      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Cucumber Java.Feature: user_authentication" />
-        <item itemvalue="Cucumber Java.Feature: transaction_search_filter" />
-        <item itemvalue="Cucumber Java.Scenario: 1. Search for transactions account number" />
-        <item itemvalue="Cucumber Java.Scenario: 5.  Filter transactions using Type" />
-        <item itemvalue="JUnit.CucumberTestSuite" />
+        <item itemvalue="Cucumber Java.Scenario: Verify Change Phone Number Denied Action as a maker and a checker Without OTP option and a Valid Phone Number" />
+        <item itemvalue="Cucumber Java.Scenario: 4. Verify Change Phone Number Denied Action as a maker and a checker With OTP option and a Valid Phone Number" />
+        <item itemvalue="Cucumber Java.Scenario: Verify Change Phone Number Denied Action as a maker and a checker With OTP option and a Valid Phone Number" />
+        <item itemvalue="Cucumber Java.Scenario: 3. Verify Change Phone Number Action With OTP Option and Using an Existing Phone Number" />
+        <item itemvalue="Cucumber Java.Scenario: Verify Change Phone Number Action Without OTP Option and Current Phone number" />
       </list>
     </recent_temporary>
   </component>
@@ -236,63 +276,33 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/test/java/starter/step_definitions/customers/CustomersActionStepDefinitions.java</url>
-          <line>45</line>
+          <line>73</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/test/java/starter/utils/BranchApiHelper.java</url>
-          <line>89</line>
-          <option name="timeStamp" value="13" />
+          <url>file://$PROJECT_DIR$/src/test/java/starter/step_definitions/customers/CustomersActionStepDefinitions.java</url>
+          <line>71</line>
+          <option name="timeStamp" value="2" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/test/java/starter/utils/BranchApiHelper.java</url>
-          <line>91</line>
-          <option name="timeStamp" value="15" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/test/java/starter/utils/BranchApiHelper.java</url>
-          <line>92</line>
-          <option name="timeStamp" value="16" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/test/java/starter/utils/BranchApiHelper.java</url>
-          <line>88</line>
-          <option name="timeStamp" value="17" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/test/java/starter/step_definitions/auth/UserAuthentications.java</url>
-          <line>72</line>
-          <option name="timeStamp" value="18" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/test/java/starter/utils/BranchApiHelper.java</url>
-          <line>78</line>
-          <option name="timeStamp" value="19" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/test/java/starter/utils/BranchApiHelper.java</url>
-          <line>77</line>
-          <option name="timeStamp" value="20" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/test/java/starter/utils/BranchApiHelper.java</url>
-          <line>79</line>
-          <option name="timeStamp" value="21" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/test/java/starter/utils/BranchApiHelper.java</url>
+          <url>file://$PROJECT_DIR$/src/test/java/starter/step_definitions/customers/CustomersActionStepDefinitions.java</url>
           <line>80</line>
-          <option name="timeStamp" value="22" />
+          <option name="timeStamp" value="3" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/test/java/starter/utils/BranchApiHelper.java</url>
-          <line>82</line>
-          <option name="timeStamp" value="23" />
+          <url>file://$PROJECT_DIR$/src/test/java/starter/step_definitions/customers/CustomersActionStepDefinitions.java</url>
+          <line>74</line>
+          <option name="timeStamp" value="4" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/test/java/starter/utils/BranchApiHelper.java</url>
-          <line>83</line>
-          <option name="timeStamp" value="24" />
+          <url>file://$PROJECT_DIR$/src/test/java/starter/step_definitions/customers/CustomersActionStepDefinitions.java</url>
+          <line>75</line>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/starter/step_definitions/customers/CustomersActionStepDefinitions.java</url>
+          <line>76</line>
+          <option name="timeStamp" value="6" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

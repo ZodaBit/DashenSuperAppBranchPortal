@@ -2,24 +2,24 @@ Feature: Transactions Search API Validation
 
   Scenario: 1. Search for transactions account number
     Given I have a valid access token for the user "zolam"
-    And I send a POST request to "ep_user_login" with the passcode "Abc@123"
+    And I send a POST request to "ep_user_passcode_login" with the passcode "Abc@123"
     When I send a GET request to "ep_transactions_paginate" with the following query parameter:
-      | search_key | 5015903528001 |
+      | search_key | 5004907881071 |
     Then the response status code should be 200
     And the response "data" should contain one or more items
 
 
   Scenario: 2. Search for transactions using sender name
     Given I have a valid access token for the user "zolam"
-    And I send a POST request to "ep_user_login" with the passcode "Abc@123"
+    And I send a POST request to "ep_user_passcode_login" with the passcode "Abc@123"
     When I send a GET request to "ep_transactions_paginate" with the following query parameter:
-      | search_key | belay dori boroji |
+      | search_key | MIKIAS |
     Then the response status code should be 200
     And the response "data" should contain one or more items
 
   Scenario: 3. Search for transactions using transaction Id
     Given I have a valid access token for the user "zolam"
-    And I send a POST request to "ep_user_login" with the passcode "Abc@123"
+    And I send a POST request to "ep_user_passcode_login" with the passcode "Abc@123"
     When I send a GET request to "ep_transactions_paginate" with the following query parameter:
       | search_key | ASSA10847241582497847664 |
     Then the response status code should be 200
@@ -59,7 +59,7 @@ Feature: Transactions Search API Validation
 
   Scenario Outline: 4.  Filter transactions using branch status
     Given I have a valid access token for the user "zolam"
-    And I send a POST request to "ep_user_login" with the passcode "Abc@123"
+    And I send a POST request to "ep_user_passcode_login" with the passcode "Abc@123"
     When I send a GET request to "ep_transactions_paginate" with the following query parameter:
       | status     | <Status> |
       | search_key | <TrxID>  |
@@ -88,7 +88,7 @@ Feature: Transactions Search API Validation
 
   Scenario Outline: 5.  Filter transactions using Type
     Given I have a valid access token for the user "zolam"
-    And I send a POST request to "ep_user_login" with the passcode "Abc@123"
+    And I send a POST request to "ep_user_passcode_login" with the passcode "Abc@123"
     When I send a GET request to "ep_transactions_paginate" with the following query parameter:
       | type       | <Type>  |
       | search_key | <TrxID> |
@@ -125,7 +125,7 @@ Feature: Transactions Search API Validation
 
   Scenario: 6. Filter transactions using a date later than the given date
     Given I have a valid access token for the user "zolam"
-    And I send a POST request to "ep_user_login" with the passcode "Abc@123"
+    And I send a POST request to "ep_user_passcode_login" with the passcode "Abc@123"
     When I send a GET request to "ep_transactions_paginate" with the following query parameter:
       | date_to | 2025-01-10 |
     Then the response status code should be 200
@@ -134,7 +134,7 @@ Feature: Transactions Search API Validation
 
   Scenario: 7. Filter transactions using a date earlier than the given date
     Given I have a valid access token for the user "zolam"
-    And I send a POST request to "ep_user_login" with the passcode "Abc@123"
+    And I send a POST request to "ep_user_passcode_login" with the passcode "Abc@123"
     When I send a GET request to "ep_transactions_paginate" with the following query parameter:
       | date_to | 2025-01-10 |
     Then the response status code should be 200
@@ -142,7 +142,7 @@ Feature: Transactions Search API Validation
 
   Scenario: 8. Filter transactions using a date within the valid range
     Given I have a valid access token for the user "zolam"
-    And I send a POST request to "ep_user_login" with the passcode "Abc@123"
+    And I send a POST request to "ep_user_passcode_login" with the passcode "Abc@123"
     When I send a GET request to "ep_transactions_paginate" with the following query parameter:
       | date_to   | 2025-02-10 |
       | date_from | 2025-02-01 |
