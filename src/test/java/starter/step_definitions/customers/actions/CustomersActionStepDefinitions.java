@@ -1,4 +1,4 @@
-package starter.step_definitions.customers;
+package starter.step_definitions.customers.actions;
 
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.When;
@@ -28,7 +28,6 @@ public class CustomersActionStepDefinitions {
         postRequestLogin(otpJsonBody, getParameterProperties(endPoint), EnvConfig.getOtpForHeader(), token);
     }
 
-
     @When("I request an access limit for the user code {string} as a maker")
     public void iRequestAnAccessLimitForTheUserCodeAsAMaker(String userCode) {
         String otpJsonBody = String.format(CUSTOMER_ACCESS_CONTROL, userCode);
@@ -47,7 +46,6 @@ public class CustomersActionStepDefinitions {
     public void eachItemOfRepsonseByShouldContain(String jsonPath, String fieldValue) {
         checkEachItemInResponseContains(jsonPath, fieldValue);
     }
-
 
     @And("I send a POST request to {string} user code {string} and phone number {string}")
     public void iSendAPOSTRequestToUserCodeAndPhoneNumber(String endPoint, String userCode, String phoneNumber) {
@@ -89,7 +87,7 @@ public class CustomersActionStepDefinitions {
     public void iReviewThePhoneNumberChangeRequestForTheUserCodeWithStatusAsAChecker(String phoneNumber, String userCode, String status) {
         String body = String.format(CHANGE_PHONE_NUMBER_CHECKER, status, userCode, phoneNumber);
         Response response = getContext(HTTP_RESPONSE_LOGIN.name());
-        String token=response.then().extract().jsonPath().getString("token");
+        String token = response.then().extract().jsonPath().getString("token");
         postRequest(body, getParameterProperties("ep_customer_action_change_phone_number_checker"), token);
     }
 

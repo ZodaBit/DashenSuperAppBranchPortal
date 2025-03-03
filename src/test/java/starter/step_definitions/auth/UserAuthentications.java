@@ -9,10 +9,9 @@ import starter.utils.EnvConfig;
 import starter.utils.HelperUtils;
 
 import static starter.assertions.AssertionsAPI.*;
-import static starter.utils.BranchApiHelper.*;
-import static starter.utils.JsonBodyHelperUtils.*;
+import static starter.utils.BranchApiHelper.postRequestLogin;
 import static starter.utils.PropertiesReader.getParameterProperties;
-import static starter.utils.TestGlobalVariables.ContextEnum.*;
+import static starter.utils.TestGlobalVariables.ContextEnum.HTTP_RESPONSE;
 import static starter.utils.TestGlobalVariables.getContext;
 import static starter.utils.jsons.AuthJson.*;
 
@@ -64,12 +63,10 @@ public class UserAuthentications {
     @When("I send a POST request to {string} with the passcode {string}")
     public void whenISendAPOSTRequestToWithThePasscode(String endPoint, String passCode) {
         String userPassCodeJsonBody = String.format(USER_PASSWORD, passCode);
-        Response response=getContext(HTTP_RESPONSE.name());
-        String token=response.then().extract().jsonPath().getString("accesstoken");
+        Response response = getContext(HTTP_RESPONSE.name());
+        String token = response.then().extract().jsonPath().getString("accesstoken");
         postRequestLogin(userPassCodeJsonBody, getParameterProperties(endPoint), token);
     }
-
-
 
     @Given("I send a POST request to {string} with incorrect token")
     public void iSendAPOSTRequestToEndpoint(String endPoint) {
@@ -77,9 +74,9 @@ public class UserAuthentications {
         postRequestLogin(userPassCodeJsonBody, getParameterProperties(endPoint), ACCESS_TOKEN_DUMMY_DATA);
     }
 
-
     @And("the response {string} should contain one or more items")
     public void theResponseShouldContainOneOrMoreItems(String jsonpath) {
         checkResponseContainOneAndMoreThanOneItem(jsonpath);
     }
+
 }

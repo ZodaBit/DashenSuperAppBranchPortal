@@ -40,7 +40,7 @@ Feature: Change Phone Number Actions Functionality
     Then the response status code should be 200
     And the response should contain a field named "message" with the value "phone number change declined"
 
-  Scenario: Verify Change Phone Number Denied Action as a maker and a checker Without OTP option and a Valid Phone Number
+  Scenario: 5. Verify Change Phone Number Denied Action as a maker and a checker Without OTP option and a Valid Phone Number
     Given I have a valid access token for the user "zolam"
     And I send a POST request to "ep_user_passcode_login" with the passcode "Abc@123"
     When I attempt to change the phone number using the user code "123085832085002" and phone number "+251912717278" as a maker
@@ -53,15 +53,32 @@ Feature: Change Phone Number Actions Functionality
     Then the response status code should be 200
     And the response should contain a field named "message" with the value "phone number change declined"
 
-  Scenario: Verify Change Phone Number AUTHORIZED Action as a maker and a checker Without OTP option and a Valid Phone Number
+
+  Scenario:6. Verify Change Phone Number AUTHORIZED Action as a maker and a checker Without OTP option and a Valid Phone Number
     Given I have a valid access token for the user "zolam"
     And I send a POST request to "ep_user_passcode_login" with the passcode "Abc@123"
-    When I attempt to change the phone number using the user code "52721867126714" and phone number "+251799117172" as a maker
+    When I attempt to change the phone number using the user code "129676245406479" and phone number "+251912717278" as a maker
     Then the response status code should be 200
     And the response should contain a field named "message" with the value "OTP verified successfully. Awaiting approval for phone number change."
 
     Given I have a valid access token for the user "bini2"
     And I send a POST request to "ep_user_passcode_login" with the passcode "Admin@7"
-    When I review the phone number "+251799117172" change request for the user code "52721867126714" with status "AUTHORIZED" as a checker
+    When I review the phone number "+251912717278" change request for the user code "129676245406479" with status "AUTHORIZED" as a checker
     Then the response status code should be 200
     And the response should contain a field named "message" with the value "Phone number changed successfully"
+
+  Scenario: 7. Verify Change Phone Number AUTHORIZED Action as a maker and a checker With OTP option and a Valid Phone Number
+    Given I have a valid access token for the user "zolam"
+    And I send a POST request to "ep_user_passcode_login" with the passcode "Abc@123"
+    When I retrieve and verify the OTP for the user code "129676245406479"
+    And the response should contain a field named "message" with the value "OTP verified successfully"
+    And I attempt to change the phone number using the user code "129676245406479" and phone number "+251921069701" as a maker
+    Then the response status code should be 200
+    And the response should contain a field named "message" with the value "OTP verified successfully. Awaiting approval for phone number change."
+
+    Given I have a valid access token for the user "bini2"
+    And I send a POST request to "ep_user_passcode_login" with the passcode "Admin@7"
+    When I review the phone number "+251921069701" change request for the user code "129676245406479" with status "AUTHORIZED" as a checker
+    Then the response status code should be 200
+    And the response should contain a field named "message" with the value "Phone number changed successfully"
+

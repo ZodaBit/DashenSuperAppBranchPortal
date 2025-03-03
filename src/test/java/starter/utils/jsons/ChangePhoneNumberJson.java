@@ -16,6 +16,7 @@ public class ChangePhoneNumberJson {
                 "otpCode": "%s"
             }
             """;
+
     public static String CHANGE_PHONE_NUMBER_CHECKER = """
             {
                 "decision": "%s",
@@ -24,4 +25,29 @@ public class ChangePhoneNumberJson {
                 "newPhoneNumber": "%s"
             }
             """;
+
+    public static String DETACH_PHONE_NUMBER_OTP_MAKER = """
+            {
+                "userCode": "%s",
+                "phoneNumber": "%s",
+                "otpCode": "%s"
+            }
+            """;
+
+    public static String DETACH_PHONE_NUMBER_CHECKER = """
+           {
+             "decision": "%s",
+             "reason": "automation reason",
+             "userCode": "%s",
+             "phoneNumber": "%s"
+           }
+            """;
+
+    public static String ATTACH_PHONE_NUMBER_MAKER = """
+           {
+             "userCode": "%s",
+             "phoneNumber": "%s"
+           }
+            """;
+
 }

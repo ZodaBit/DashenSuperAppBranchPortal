@@ -20,8 +20,8 @@ public class BranchApiHelper {
     public static String baseApiUrl = EnvConfig.getBaseUrl();
     public static final int MAX_RETRIES = 5;
     public static final long RETRY_DELAY_MS = 120000;
-    public static List<Integer> retryStatusCodes = List.of(500,503);
-    public static String message="active OTP: please try again in";
+    public static List<Integer> retryStatusCodes = List.of(500, 503);
+    public static String message = "active OTP: please try again in";
 
 
     public static Response postRequestLogin(Object body, String path) {
@@ -73,7 +73,7 @@ public class BranchApiHelper {
 //        throw new RuntimeException("Failed to get a successful response after" + MAX_RETRIES + "attempts");
 //    }
 
-    public static Response postRequestLogin(Object body, String path,String accessToken) {
+    public static Response postRequestLogin(Object body, String path, String accessToken) {
         int attempts = 0;
         while (attempts < MAX_RETRIES) {
             Response response = given()
@@ -90,14 +90,14 @@ public class BranchApiHelper {
                 attempts++;
             } else {
                 setContext(HTTP_RESPONSE.name(), response);
-                setContext(HTTP_RESPONSE_LOGIN.name(),response);
+                setContext(HTTP_RESPONSE_LOGIN.name(), response);
                 return response;
             }
         }
         throw new RuntimeException("Failed to get a successful response after" + MAX_RETRIES + "attempts");
     }
 
-    public static Response postRequest(Object body, String path,String accessToken) {
+    public static Response postRequest(Object body, String path, String accessToken) {
         int attempts = 0;
         while (attempts < MAX_RETRIES) {
             Response response = given()
@@ -147,19 +147,20 @@ public class BranchApiHelper {
     }
 
     public static Response postRequestLoginAction(Object body, String path, String accessToken) {
-            Response response = given()
-                    .contentType(ContentType.JSON)
-                    .header("sourceapp", EnvConfig.getSourceAppHeader())
-                    .header("Authorization", "Bearer " + accessToken)
-                    .baseUri(baseApiUrl)
-                    .basePath(path)
-                    .body(body)
-                    .post()
-                    .then().log().all().extract().response();
-                setContext(HTTP_RESPONSE_ACTION.name(), response);
-                return response;
+        Response response = given()
+                .contentType(ContentType.JSON)
+                .header("sourceapp", EnvConfig.getSourceAppHeader())
+                .header("Authorization", "Bearer " + accessToken)
+                .baseUri(baseApiUrl)
+                .basePath(path)
+                .body(body)
+                .post()
+                .then().log().all().extract().response();
+        setContext(HTTP_RESPONSE_ACTION.name(), response);
+        return response;
 
     }
+
     public static Response getRequest(String path, String accessToken) {
         int attempts = 0;
         while (attempts < MAX_RETRIES) {
