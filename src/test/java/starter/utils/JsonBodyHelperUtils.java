@@ -9,7 +9,6 @@ public class JsonBodyHelperUtils {
             }
             """;
 
-
     public static String USER_CODE_JSON = """
                         
              {
@@ -18,24 +17,25 @@ public class JsonBodyHelperUtils {
                         
             """;
 
+//    public static String USER_CODE_CHECKER_JSON = """
+//
+//             {
+//                 "userCode": "%s",
+//                 "decision": "%S"
+//             }
+//
+//            """;
+
     public static String USER_CODE_CHECKER_JSON = """
                         
              {
-                 "userCode": "%s",
-                 "decision": "%S"
-             }
-                        
-            """;
-
-    public static String USER_CODE_CHECKER_DENIED_JSON = """
-                        
-             {
-                   "decision": "%S",
+                   "decision": "%s",
                    "reason": "automation note",
                    "userCode": "%s"
              }
                         
             """;
+
     public static String CUSTOMER_ACCESS_CONTROL = """
             {
                 "userCode": "%S",
@@ -77,6 +77,4 @@ public class JsonBodyHelperUtils {
                 }
             }
             """;
-
-
 }

@@ -10,8 +10,7 @@ import static starter.utils.PropertiesReader.getParameterProperties;
 import static starter.utils.TestGlobalVariables.ContextEnum.HTTP_RESPONSE;
 import static starter.utils.TestGlobalVariables.ContextEnum.HTTP_RESPONSE_LOGIN;
 import static starter.utils.TestGlobalVariables.getContext;
-import static starter.utils.jsons.AccountLookUp.ACCOUNT_LOOKUP;
-import static starter.utils.jsons.AccountLookUp.ACCOUNT_LOOKUP_OTP;
+import static starter.utils.jsons.AccountLookUp.*;
 import static starter.utils.jsons.ChangePhoneNumberJson.*;
 
 public class AccountLookupActionStepDefinitions {
@@ -83,5 +82,41 @@ public class AccountLookupActionStepDefinitions {
         Response response = getContext(HTTP_RESPONSE_LOGIN.name());
         String token = response.then().extract().jsonPath().getString("token");
         postRequest(body, getParameterProperties("ep_customer_action_account_attach_phone_number_checker"), token);
+    }
+
+    @And("I attempt to unlink account number using the user code {string} and account number {string} as a maker")
+    public void iAttemptToUnlinkAccountNumberUsingTheUserCodeAndAccountNumberAsAMaker(String userCode, String accountNumber) {
+        Response otpResponse = getContext(HTTP_RESPONSE.name());
+        String otp = otpResponse.path("finalResponse.otp.otpcode");
+        String unlinkAccountJsonBody = String.format(ACCOUNT_VERIFY_OTP, userCode, accountNumber, otp);
+        Response response = getContext(HTTP_RESPONSE_LOGIN.name());
+        String token = response.then().extract().jsonPath().getString("token");
+        postRequest(unlinkAccountJsonBody, getParameterProperties("ep_customer_Action_account_unlink_verify_otp_maker"), token);
+    }
+
+    @When("I review the unlink account number {string} change request for the user code {string} with status {string} as a checker")
+    public void iReviewTheUnlinkAccountNumberChangeRequestForTheUserCodeWithStatusAsAChecker(String accountNumber, String userCode, String status) {
+        String body = String.format(ACCOUNT_UNLINK_CHECKER, status, userCode, accountNumber);
+        Response response = getContext(HTTP_RESPONSE_LOGIN.name());
+        String token = response.then().extract().jsonPath().getString("token");
+        postRequest(body, getParameterProperties("ep_customer_Action_account_unlink_checker"), token);
+    }
+
+    @And("I attempt to link account number using the user code {string} and account number {string} as a maker")
+    public void iAttemptToLinkAccountNumberUsingTheUserCodeAndAccountNumberAsAMaker(String userCode, String accountNumber) {
+        Response otpResponse = getContext(HTTP_RESPONSE.name());
+        String otp = otpResponse.path("finalResponse.otp.otpcode");
+        String unlinkAccountJsonBody = String.format(ACCOUNT_VERIFY_OTP, userCode, accountNumber, otp);
+        Response response = getContext(HTTP_RESPONSE_LOGIN.name());
+        String token = response.then().extract().jsonPath().getString("token");
+        postRequest(unlinkAccountJsonBody, getParameterProperties("ep_customer_Action_account_link_verify_otp_maker"), token);
+    }
+
+    @When("I review the link account number {string} change request for the user code {string} with status {string} as a checker")
+    public void iReviewTheLinkAccountNumberChangeRequestForTheUserCodeWithStatusAsAChecker(String accountNumber, String userCode, String status) {
+        String body = String.format(ACCOUNT_UNLINK_CHECKER, status, userCode, accountNumber);
+        Response response = getContext(HTTP_RESPONSE_LOGIN.name());
+        String token = response.then().extract().jsonPath().getString("token");
+        postRequest(body, getParameterProperties("ep_customer_Action_account_link_checker"), token);
     }
 }

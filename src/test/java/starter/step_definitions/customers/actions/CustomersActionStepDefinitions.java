@@ -14,18 +14,20 @@ import static starter.utils.TestGlobalVariables.getContext;
 import static starter.utils.jsons.ChangePhoneNumberJson.*;
 
 public class CustomersActionStepDefinitions {
-    @When("I send a POST request to {string} with the user code {string}")
+    @When("I send a POST request to {string} with the user code {string} as a maker")
     public void iSendAPOSTRequestToWithTheUsercode(String endPoint, String userCode) {
-        String otpJsonBody = String.format(USER_CODE_JSON, userCode);
-        String token = getContext(ACCESS_TOKEN.name());
-        postRequestLoginAction(otpJsonBody, getParameterProperties(endPoint), token);
+        String userCodeJsonBody = String.format(USER_CODE_JSON, userCode);
+        Response response = getContext(HTTP_RESPONSE_LOGIN.name());
+        String token = response.then().extract().jsonPath().getString("token");
+        postRequest(userCodeJsonBody, getParameterProperties(endPoint), token);
     }
 
-    @And("I send a POST request to {string} with the user code {string} and status {string}")
+    @And("I send a POST request to {string} with the user code {string} and status {string} as a checker")
     public void iSendAPOSTRequestToWithTheUserCodeAndStatus(String endPoint, String userCode, String status) {
-        String otpJsonBody = String.format(USER_CODE_CHECKER_JSON, userCode, status);
-        String token = getContext(ACCESS_TOKEN.name());
-        postRequestLogin(otpJsonBody, getParameterProperties(endPoint), EnvConfig.getOtpForHeader(), token);
+        String userCodeCheckerJsonBody = String.format(USER_CODE_CHECKER_JSON, status, userCode);
+        Response response = getContext(HTTP_RESPONSE_LOGIN.name());
+        String token = response.then().extract().jsonPath().getString("token");
+        postRequest(userCodeCheckerJsonBody, getParameterProperties(endPoint), token);
     }
 
     @When("I request an access limit for the user code {string} as a maker")
@@ -37,7 +39,7 @@ public class CustomersActionStepDefinitions {
 
     @And("I approve the access limit request for the user code {string} with status {string} as a checker")
     public void iApproveTheAccessLimitRequestForTheUserCodeWithStatusAsAChecker(String userCode, String status) {
-        String otpJsonBody = String.format(USER_CODE_CHECKER_DENIED_JSON, status, userCode);
+        String otpJsonBody = String.format(USER_CODE_CHECKER_JSON, status, userCode);
         String token = getContext(ACCESS_TOKEN.name());
         postRequestLogin(otpJsonBody, getParameterProperties("ep_customer_checker_actions_access_limit"), EnvConfig.getOtpForHeader(), token);
     }
@@ -89,6 +91,38 @@ public class CustomersActionStepDefinitions {
         Response response = getContext(HTTP_RESPONSE_LOGIN.name());
         String token = response.then().extract().jsonPath().getString("token");
         postRequest(body, getParameterProperties("ep_customer_action_change_phone_number_checker"), token);
+    }
+
+    @And("I send a POST request to {string} to activate the account using the user code {string} as a maker")
+    public void iSendAPOSTRequestToToActivateTheAccountUsingTheUserCodeAsAMaker(String endPoint, String userCode) {
+        String userCodeJsonBody = String.format(USER_CODE_JSON, userCode);
+        Response response = getContext(HTTP_RESPONSE_LOGIN.name());
+        String token = response.then().extract().jsonPath().getString("token");
+        postRequest(userCodeJsonBody, getParameterProperties(endPoint), token,"activate");
+    }
+
+    @And("I send a POST request to {string} to reactivate the account using the user code {string} as a maker")
+    public void iSendAPOSTRequestToToReactivateTheAccountUsingTheUserCodeAsAMaker(String endPoint, String userCode) {
+        String userCodeJsonBody = String.format(USER_CODE_JSON, userCode);
+        Response response = getContext(HTTP_RESPONSE_LOGIN.name());
+        String token = response.then().extract().jsonPath().getString("token");
+        postRequest(userCodeJsonBody, getParameterProperties(endPoint), token,"activate");
+    }
+
+    @When("I review a POST request to {string} to activate the change request for the user code {string} with the status {string} as the checker")
+    public void iReviewAPOSTRequestToToActivateTheChangeRequestForTheUserCodeWithTheStatusAsTheChecker(String endPoint, String userCode, String status) {
+        String userCodeCheckerJsonBody = String.format(USER_CODE_CHECKER_JSON, status, userCode);
+        Response response = getContext(HTTP_RESPONSE_LOGIN.name());
+        String token = response.then().extract().jsonPath().getString("token");
+        postRequest(userCodeCheckerJsonBody, getParameterProperties(endPoint), token,"activate");
+    }
+
+    @When("I review a POST request to {string} to reactivate the change request for the user code {string} with the status {string} as the checker")
+    public void iReviewAPOSTRequestToToReactivateTheChangeRequestForTheUserCodeWithTheStatusAsTheChecker(String endPoint, String userCode, String status) {
+        String userCodeCheckerJsonBody = String.format(USER_CODE_CHECKER_JSON, status, userCode);
+        Response response = getContext(HTTP_RESPONSE_LOGIN.name());
+        String token = response.then().extract().jsonPath().getString("token");
+        postRequest(userCodeCheckerJsonBody, getParameterProperties(endPoint), token,"activate");
     }
 
 }
