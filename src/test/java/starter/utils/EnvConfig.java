@@ -15,7 +15,7 @@ public class EnvConfig {
         try {
             return conf.getProperty(key);
         } catch (Exception e) {
-            log.error("Property {} not found", key);
+            //log.error("Property {} not found", key);
             return null;
         }
     }

@@ -9,6 +9,7 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
+import java.util.stream.Collectors;
 
 import static org.hamcrest.Matchers.containsString;
 import static org.hamcrest.Matchers.hasSize;
@@ -31,6 +32,7 @@ public class AssertionsAPI {
         Assert.assertEquals(field, value);
     }
 
+
     /**
      * Validate each value in the response list
      *
@@ -50,6 +52,12 @@ public class AssertionsAPI {
         List<String> value = response.then().extract().body().jsonPath().getList(jsonPath, String.class);
         value.stream().forEach(s -> Assert.assertTrue("Current value: " + s,
                 s.toLowerCase().contains(field.toLowerCase())));
+    }
+
+    public static void checkResponseContainOneAndMoreThanOneItem(String jsonPath) {
+        Response response = getContext(HTTP_RESPONSE.name());
+       int countedValue= response.then().extract().body().jsonPath().getList(jsonPath).size();
+       Assert.assertTrue(countedValue>=1);
     }
 
     /**
@@ -99,22 +107,6 @@ public class AssertionsAPI {
         Response response = getContext(HTTP_RESPONSE.name());
         int result = response.then().extract().body().jsonPath().getList(jsonPath).size();
         Assert.assertEquals(result, expectedSize);
-    }
-
-    public static void checkDescendingSorting() {
-        Response response = getContext(HTTP_RESPONSE.name());
-        List<Integer> ids = response.then().extract().body().jsonPath().get("id");
-        for (int i = 0; i < ids.size() - 1; i++) {
-            Assert.assertTrue(ids.get(i) > ids.get(i + 1));
-        }
-    }
-
-    public static void checkAscendingSorting() {
-        Response response = getContext(HTTP_RESPONSE.name());
-        List<Integer> ids = response.then().extract().body().jsonPath().get("id");
-        for (int i = 0; i < ids.size() - 1; i++) {
-            Assert.assertTrue(ids.get(i) < ids.get(i + 1));
-        }
     }
 
     public static void checkResponseContainsField(String path, String fieldName) {
