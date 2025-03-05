@@ -22,7 +22,7 @@ public class CustomersActionStepDefinitions {
         postRequest(userCodeJsonBody, getParameterProperties(endPoint), token);
     }
 
-    @And("I send a POST request to {string} with the user code {string} and status {string} as a checker")
+    @And("I send a POST request to {string} with the user code {string}, value {} and status {string} as a checker")
     public void iSendAPOSTRequestToWithTheUserCodeAndStatus(String endPoint, String userCode, String status) {
         String userCodeCheckerJsonBody = String.format(USER_CODE_CHECKER_JSON, status, userCode);
         Response response = getContext(HTTP_RESPONSE_LOGIN.name());
@@ -30,18 +30,28 @@ public class CustomersActionStepDefinitions {
         postRequest(userCodeCheckerJsonBody, getParameterProperties(endPoint), token);
     }
 
-    @When("I request an access limit for the user code {string} as a maker")
-    public void iRequestAnAccessLimitForTheUserCodeAsAMaker(String userCode) {
-        String otpJsonBody = String.format(CUSTOMER_ACCESS_CONTROL, userCode);
-        String token = getContext(ACCESS_TOKEN.name());
-        postRequestLogin(otpJsonBody, getParameterProperties("ep_customer_maker_actions_access_limit"), EnvConfig.getOtpForHeader(), token);
+    @When("I request an access limit for the user code {string} with value {string} as a maker")
+    public void iRequestAnAccessLimitForTheUserCodeWithValueAsAMaker(String userCode, String value) {
+        boolean accessValue=Boolean.parseBoolean(value);
+
+        String accessControlJsonBody = String.format(CUSTOMER_ACCESS_CONTROL, userCode,accessValue, accessValue, accessValue, accessValue,accessValue,accessValue,
+                accessValue, accessValue, accessValue, accessValue, accessValue, accessValue, accessValue,
+                accessValue, accessValue, accessValue, accessValue, accessValue, accessValue, accessValue,
+                accessValue, accessValue, accessValue, accessValue, accessValue, accessValue, accessValue,
+                accessValue, accessValue, accessValue, accessValue, accessValue, accessValue, accessValue);
+
+        Response response = getContext(HTTP_RESPONSE_LOGIN.name());
+        String token = response.then().extract().jsonPath().getString("token");
+        postRequest(accessControlJsonBody, getParameterProperties("ep_customer_maker_actions_access_limit"), token);
     }
 
     @And("I approve the access limit request for the user code {string} with status {string} as a checker")
     public void iApproveTheAccessLimitRequestForTheUserCodeWithStatusAsAChecker(String userCode, String status) {
-        String otpJsonBody = String.format(USER_CODE_CHECKER_JSON, status, userCode);
-        String token = getContext(ACCESS_TOKEN.name());
-        postRequestLogin(otpJsonBody, getParameterProperties("ep_customer_checker_actions_access_limit"), EnvConfig.getOtpForHeader(), token);
+
+        String accessControlJsonBody = String.format(USER_CODE_CHECKER_JSON, status, userCode);
+        Response response = getContext(HTTP_RESPONSE_LOGIN.name());
+        String token = response.then().extract().jsonPath().getString("token");
+        postRequest(accessControlJsonBody, getParameterProperties("ep_customer_checker_actions_access_limit"),token);
     }
 
     @And("Each item of repsonse by {string} should contain {string}")

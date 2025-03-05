@@ -109,22 +109,6 @@ public class AssertionsAPI {
         Assert.assertEquals(result, expectedSize);
     }
 
-    public static void checkDescendingSorting() {
-        Response response = getContext(HTTP_RESPONSE.name());
-        List<Integer> ids = response.then().extract().body().jsonPath().get("id");
-        for (int i = 0; i < ids.size() - 1; i++) {
-            Assert.assertTrue(ids.get(i) > ids.get(i + 1));
-        }
-    }
-
-    public static void checkAscendingSorting() {
-        Response response = getContext(HTTP_RESPONSE.name());
-        List<Integer> ids = response.then().extract().body().jsonPath().get("id");
-        for (int i = 0; i < ids.size() - 1; i++) {
-            Assert.assertTrue(ids.get(i) < ids.get(i + 1));
-        }
-    }
-
     public static void checkResponseContainsField(String path, String fieldName) {
         String field = HelperUtils.resolvePath(fieldName);
         Response response = getContext(HTTP_RESPONSE.name());

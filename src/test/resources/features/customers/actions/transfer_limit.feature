@@ -1,6 +1,6 @@
 Feature: Verifying Transfer Limit functionality
 
-  Scenario Outline: Verifying Transaction Limit Rejection When One-Time Limit Exceeds Daily Limit
+  Scenario Outline: 1. Verifying Transaction Limit Rejection When One-Time Limit Exceeds Daily Limit
     Given I have a valid access token for the user "zolam"
     And I send a POST request to "ep_user_passcode_login" with the passcode "Abc@123"
     When I send a POST request to "ep_customer_action_transfer_limit_otp_maker" with user code "<userCode>"
@@ -8,7 +8,6 @@ Feature: Verifying Transfer Limit functionality
     And I set the transaction limits for user "<userCode>", service "<serviceName>", one-time limit "<oneTimeLimit>", and daily limit "<dailyLimit>" as a maker
     Then the response status code should be 400
     And the response should contain a field named "message" with the value "Transaction one-time limit cannot be greater than the daily transaction limit"
-
     Examples:
       | userCode       | serviceName            | dailyLimit | oneTimeLimit |
       | 67572905475505 | merchant_pay           | 10000      | 500000       |
@@ -32,8 +31,7 @@ Feature: Verifying Transfer Limit functionality
       | 67572905475505 | teletv                 | 10000      | 500000       |
       | 67572905475505 | transfer_to_other_bank | 10000      | 500000       |
 
-
-  Scenario Outline: Verifying Transaction Limit Denial Process as Maker and Checker
+  Scenario Outline: 2. Verifying Transaction Limit Denial Process as Maker and Checker
     Given I have a valid access token for the user "zolam"
     And I send a POST request to "ep_user_passcode_login" with the passcode "Abc@123"
     When I send a POST request to "ep_customer_action_transfer_limit_otp_maker" with user code "<userCode>"
@@ -47,7 +45,6 @@ Feature: Verifying Transfer Limit functionality
     When I review the "DENIED" status transfer limit change request for user code "<userCode>" as a checker
     Then the response status code should be 200
     And the response should contain a field named "message" with the value "Transaction limit update request denied"
-
     Examples:
       | userCode       | serviceName            | oneTimeLimit | dailyLimit |
       | 67572905475505 | merchant_pay           | 10000        | 500000     |
@@ -71,7 +68,7 @@ Feature: Verifying Transfer Limit functionality
       | 67572905475505 | teletv                 | 10000        | 500000     |
       | 67572905475505 | transfer_to_other_bank | 10000        | 500000     |
 
-  Scenario Outline: Verifying Authorization of Transaction Limit Process as Maker and Checker
+  Scenario Outline:3. Verifying Authorization of Transaction Limit Process as Maker and Checker
     Given I have a valid access token for the user "zolam"
     And I send a POST request to "ep_user_passcode_login" with the passcode "Abc@123"
     When I send a POST request to "ep_customer_action_transfer_limit_otp_maker" with user code "<userCode>"
@@ -85,7 +82,6 @@ Feature: Verifying Transfer Limit functionality
     When I review the "AUTHORIZED" status transfer limit change request for user code "<userCode>" as a checker
     Then the response status code should be 200
     And the response should contain a field named "message" with the value "Transaction limit updated successfully"
-
     Examples:
       | userCode       | serviceName            | oneTimeLimit | dailyLimit |
       | 67572905475505 | merchant_pay           | 10000        | 500000     |

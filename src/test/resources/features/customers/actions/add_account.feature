@@ -51,7 +51,6 @@ Feature: Add, Link, and Unlink Account Actions Functionality
     Then the response status code should be 200
     And the response should contain a field named "message" with the value "Account linking declined"
 
-
   Scenario: 5. Verifying Account linking  AUTHORIZED Process action as Maker and Checker
     Given I have a valid access token for the user "zolam"
     And I send a POST request to "ep_user_passcode_login" with the passcode "Abc@123"

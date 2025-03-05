@@ -44,4 +44,8 @@ public class TransactionsStepDefinitions {
         }
     }
 
+    @And("each item in the response body should have {string} field set to {string}")
+    public void eachItemInTheResponseBodyShouldHaveFieldSetTo(String jsonPath, String fieldValue) {
+        checkEachItemInResponseEquals(jsonPath, fieldValue);
+    }
 }

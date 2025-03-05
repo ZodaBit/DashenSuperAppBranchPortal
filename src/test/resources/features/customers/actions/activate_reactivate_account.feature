@@ -51,11 +51,3 @@ Feature: Activate and Reactivate Account Actions Functionality
     When I review a POST request to "ep_customer_action_reactivate_checker" to reactivate the change request for the user code "129676245406479" with the status "AUTHORIZED" as the checker
     Then the response status code should be 200
     And the response should contain a field named "finalResponse.message" with the value "OTP sent successfully"
-
-
-
-
-
-
-  #{"message":}
-    # When I send a POST request to "ep_customer_action_reset_activate_maker" with the user code "129676245406479" as a maker

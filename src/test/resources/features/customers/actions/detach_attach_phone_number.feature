@@ -1,6 +1,5 @@
 Feature: Phone Number Attachment and Detachment Actions Functionality
 
-
   Scenario: 1. Verify Detach Phone Number Denied Action as a maker and a checker
     Given I have a valid access token for the user "zolam"
     And I send a POST request to "ep_user_passcode_login" with the passcode "Abc@123"

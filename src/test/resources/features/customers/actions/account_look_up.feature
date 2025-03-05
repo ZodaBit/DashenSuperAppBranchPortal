@@ -1,6 +1,5 @@
 Feature: Account Lookup Actions Functionality
 
-
   Scenario: 1. Verifying search for an account number that does not exist
     Given I have a valid access token for the user "zolam"
     And I send a POST request to "ep_user_passcode_login" with the passcode "Abc@123"

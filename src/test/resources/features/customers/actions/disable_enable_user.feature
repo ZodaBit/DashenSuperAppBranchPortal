@@ -1,6 +1,5 @@
 Feature: Enable And Disable Account Actions Functionality
 
-
   Scenario: 1. Verifying user disable  DENIED  action as Maker and Checker
     Given I have a valid access token for the user "zolam"
     And I send a POST request to "ep_user_passcode_login" with the passcode "Abc@123"

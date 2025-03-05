@@ -52,4 +52,5 @@ public class CustomersStepDefinitions {
         getRequestWithQueryParams(params, getParameterProperties(endPoint), token);
     }
 
+
 }

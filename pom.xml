@@ -108,19 +108,19 @@
             <version>5.2.0</version>
             <!-- <scope>test</scope>-->
         </dependency>
-        <dependency>
-            <groupId>org.projectlombok</groupId>
-            <artifactId>lombok</artifactId>
-            <version>1.18.30</version>
-            <scope>provided</scope>
-        </dependency>
-        <dependency>
-            <groupId>io.rest-assured</groupId>
-            <artifactId>json-schema-validator</artifactId>
-            <version>5.2.0</version>
-        </dependency>
-    </dependencies>
-    <!--  build -->
+<dependency>
+  <groupId>org.projectlombok</groupId>
+  <artifactId>lombok</artifactId>
+  <version>1.18.30</version>
+  <scope>provided</scope>
+</dependency>
+<dependency>
+  <groupId>io.rest-assured</groupId>
+  <artifactId>json-schema-validator</artifactId>
+  <version>5.2.0</version>
+</dependency>
+</dependencies>
+<!--  build -->
     <build>
         <testResources>
             <testResource>
