@@ -1,6 +1,6 @@
 # Dashen Bank Branch Portal API Automation
 
-This repository contains the automated regression API tests for Dashen Bank Branch. Welcome!
+This repository contains the automated regression API tests for Dashen Bank Branch portal. Welcome!
 
 ## Project Pre-Requisites
 
