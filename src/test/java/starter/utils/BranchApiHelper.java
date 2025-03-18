@@ -171,7 +171,7 @@ public class BranchApiHelper {
                     .basePath(path)
                     .get()
                     .then().log().all().extract().response();
-            if (retryStatusCodes.contains(response.getStatusCode()) && response.then().extract().jsonPath().getString("message").contains(message)) {
+            if (retryStatusCodes.contains(response.getStatusCode())) {
                 sleep();
                 attempts++;
             } else {
@@ -199,7 +199,7 @@ public class BranchApiHelper {
         try {
             Thread.sleep(RETRY_DELAY_MS);
         } catch (InterruptedException e) {
-            log.error("Error occured while sleeping ", e);
+            //log.error("Error occured while sleeping ", e);
         }
     }
 

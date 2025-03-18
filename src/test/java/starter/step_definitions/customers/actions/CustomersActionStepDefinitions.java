@@ -3,13 +3,15 @@ package starter.step_definitions.customers.actions;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.When;
 import io.restassured.response.Response;
-import starter.utils.EnvConfig;
+import org.junit.Assert;
+import starter.assertions.AssertionsAPI;
 
 import static starter.assertions.AssertionsAPI.checkEachItemInResponseContains;
 import static starter.utils.BranchApiHelper.*;
 import static starter.utils.JsonBodyHelperUtils.*;
 import static starter.utils.PropertiesReader.getParameterProperties;
-import static starter.utils.TestGlobalVariables.ContextEnum.*;
+import static starter.utils.TestGlobalVariables.ContextEnum.HTTP_RESPONSE;
+import static starter.utils.TestGlobalVariables.ContextEnum.HTTP_RESPONSE_LOGIN;
 import static starter.utils.TestGlobalVariables.getContext;
 import static starter.utils.jsons.ChangePhoneNumberJson.*;
 
@@ -32,9 +34,9 @@ public class CustomersActionStepDefinitions {
 
     @When("I request an access limit for the user code {string} with value {string} as a maker")
     public void iRequestAnAccessLimitForTheUserCodeWithValueAsAMaker(String userCode, String value) {
-        boolean accessValue=Boolean.parseBoolean(value);
+        boolean accessValue = Boolean.parseBoolean(value);
 
-        String accessControlJsonBody = String.format(CUSTOMER_ACCESS_CONTROL, userCode,accessValue, accessValue, accessValue, accessValue,accessValue,accessValue,
+        String accessControlJsonBody = String.format(CUSTOMER_ACCESS_CONTROL, userCode, accessValue, accessValue, accessValue, accessValue, accessValue, accessValue,
                 accessValue, accessValue, accessValue, accessValue, accessValue, accessValue, accessValue,
                 accessValue, accessValue, accessValue, accessValue, accessValue, accessValue, accessValue,
                 accessValue, accessValue, accessValue, accessValue, accessValue, accessValue, accessValue,
@@ -51,7 +53,7 @@ public class CustomersActionStepDefinitions {
         String accessControlJsonBody = String.format(USER_CODE_CHECKER_JSON, status, userCode);
         Response response = getContext(HTTP_RESPONSE_LOGIN.name());
         String token = response.then().extract().jsonPath().getString("token");
-        postRequest(accessControlJsonBody, getParameterProperties("ep_customer_checker_actions_access_limit"),token);
+        postRequest(accessControlJsonBody, getParameterProperties("ep_customer_checker_actions_access_limit"), token);
     }
 
     @And("Each item of repsonse by {string} should contain {string}")
@@ -108,7 +110,7 @@ public class CustomersActionStepDefinitions {
         String userCodeJsonBody = String.format(USER_CODE_JSON, userCode);
         Response response = getContext(HTTP_RESPONSE_LOGIN.name());
         String token = response.then().extract().jsonPath().getString("token");
-        postRequest(userCodeJsonBody, getParameterProperties(endPoint), token,"activate");
+        postRequest(userCodeJsonBody, getParameterProperties(endPoint), token, "activate");
     }
 
     @And("I send a POST request to {string} to reactivate the account using the user code {string} as a maker")
@@ -116,7 +118,7 @@ public class CustomersActionStepDefinitions {
         String userCodeJsonBody = String.format(USER_CODE_JSON, userCode);
         Response response = getContext(HTTP_RESPONSE_LOGIN.name());
         String token = response.then().extract().jsonPath().getString("token");
-        postRequest(userCodeJsonBody, getParameterProperties(endPoint), token,"activate");
+        postRequest(userCodeJsonBody, getParameterProperties(endPoint), token, "activate");
     }
 
     @When("I review a POST request to {string} to activate the change request for the user code {string} with the status {string} as the checker")
@@ -124,7 +126,7 @@ public class CustomersActionStepDefinitions {
         String userCodeCheckerJsonBody = String.format(USER_CODE_CHECKER_JSON, status, userCode);
         Response response = getContext(HTTP_RESPONSE_LOGIN.name());
         String token = response.then().extract().jsonPath().getString("token");
-        postRequest(userCodeCheckerJsonBody, getParameterProperties(endPoint), token,"activate");
+        postRequest(userCodeCheckerJsonBody, getParameterProperties(endPoint), token, "activate");
     }
 
     @When("I review a POST request to {string} to reactivate the change request for the user code {string} with the status {string} as the checker")
@@ -132,7 +134,12 @@ public class CustomersActionStepDefinitions {
         String userCodeCheckerJsonBody = String.format(USER_CODE_CHECKER_JSON, status, userCode);
         Response response = getContext(HTTP_RESPONSE_LOGIN.name());
         String token = response.then().extract().jsonPath().getString("token");
-        postRequest(userCodeCheckerJsonBody, getParameterProperties(endPoint), token,"activate");
+        postRequest(userCodeCheckerJsonBody, getParameterProperties(endPoint), token, "activate");
     }
 
+    @And("each item in the response body should not have the field {string} set to {string}")
+    public void eachItemInTheResponseBodyShouldNotHaveTheFieldSetToNull(String jsonPath, String expectedValue) {
+        boolean isNullPresent = AssertionsAPI.filterResponse(jsonPath, expectedValue);
+        Assert.assertFalse(isNullPresent);
+    }
 }

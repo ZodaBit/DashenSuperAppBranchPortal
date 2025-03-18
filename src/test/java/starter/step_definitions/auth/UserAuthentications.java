@@ -38,22 +38,6 @@ public class UserAuthentications {
         }
     }
 
-
-//    @When("I make a POST request to {string} with {string}  and {string}")
-//    public void iMakeAPOSTRequestToWithAnd(String endpoint, String otpCode, String accessToken) {
-//        String otp = HelperUtils.resolvePath(otpCode);
-//        String token = HelperUtils.resolvePath(accessToken);
-//        String jsonBody = String.format(OTP_CODE_JSON, Integer.parseInt(otp));
-//        postRequest(jsonBody, getParameterProperties(endpoint), EnvConfig.getOtpForHeader(), token);
-//    }
-
-//    @Given("I send a POST request to {string} with password and {string}")
-//    public void iSendAPOSTRequestToWithPasswordAnd(String endPoint, String accessToken) {
-//        String token = HelperUtils.resolvePath(accessToken);
-//        String jsonBody = String.format(USER_PASSCODE_JSON, EnvConfig.getPassword());
-//        postRequest(jsonBody, getParameterProperties(endPoint), accessToken);
-//    }
-
     @Given("I have a valid access token for the user {string}")
     public void iHaveAValidAccessTokenForTheUser(String userName) {
         String userNameJsonBody = String.format(USER_NAME, userName);

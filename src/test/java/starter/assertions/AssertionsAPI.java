@@ -9,14 +9,11 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
-import java.util.stream.Collectors;
 
 import static org.hamcrest.Matchers.containsString;
 import static org.hamcrest.Matchers.hasSize;
 import static starter.utils.TestGlobalVariables.ContextEnum.HTTP_RESPONSE;
 import static starter.utils.TestGlobalVariables.getContext;
-
-;
 
 public class AssertionsAPI {
 
@@ -54,10 +51,20 @@ public class AssertionsAPI {
                 s.toLowerCase().contains(field.toLowerCase())));
     }
 
+    public static boolean filterResponse(String jsonPath, String expectedValue) {
+        String field = HelperUtils.resolvePath(expectedValue);
+        Response response = getContext(HTTP_RESPONSE.name());
+        List<String> value = response.then().extract().body().jsonPath().getList(jsonPath, String.class);
+        if (value == null || value.isEmpty()) {
+            return false;
+        }
+        return value.stream().anyMatch(s -> s.equalsIgnoreCase(field));
+    }
+
     public static void checkResponseContainOneAndMoreThanOneItem(String jsonPath) {
         Response response = getContext(HTTP_RESPONSE.name());
-       int countedValue= response.then().extract().body().jsonPath().getList(jsonPath).size();
-       Assert.assertTrue(countedValue>=1);
+        int countedValue = response.then().extract().body().jsonPath().getList(jsonPath).size();
+        Assert.assertTrue(countedValue >= 1);
     }
 
     /**

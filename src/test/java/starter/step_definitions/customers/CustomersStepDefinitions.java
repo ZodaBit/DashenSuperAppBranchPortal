@@ -53,4 +53,14 @@ public class CustomersStepDefinitions {
     }
 
 
+    @When("I make a GET request to {string} to fetch all transactions")
+    public void iMakeAGETRequestToToFetchAllTransactions(String endPoint) {
+        Response response = getContext(HTTP_RESPONSE.name());
+        String token = response.then().extract().jsonPath().getString("token");
+        Response getResponse = getRequest(getParameterProperties(endPoint), token);
+        String totalDocs = getResponse.then().extract().jsonPath().getString("totalDocs");
+        Map<String, Object> params = new HashMap<>();
+        params.put("limit", totalDocs);
+        getRequestWithQueryParams(params, getParameterProperties(endPoint), token);
+    }
 }
